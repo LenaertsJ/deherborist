@@ -1,0 +1,61 @@
+@import "./variables.scss";
+
+.search-container {
+  position: absolute;
+  right: 80px;
+  bottom: 60px;
+  width: 35%;
+  @include text-font;
+  .btn {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    @include text-font;
+    color: $accent-pink;
+    padding: 0;
+    cursor: pointer;
+  }
+  .search-word {
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+  .search-form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    .select-div {
+      min-width: 85%;
+      position: relative;
+      //hide standard select arrow
+      select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: "";
+      }
+      //add custom select arrow
+      &:after {
+        content: "<>";
+        @include text-font;
+        color: #333;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        right: 11px;
+        top: 15px;
+        padding: 0 0 2px;
+        border-bottom: 1px solid #999;
+        position: absolute;
+        pointer-events: none;
+      }
+    }
+    .select-field {
+      width: 100%;
+      padding: 15px;
+      outline: none;
+      border-radius: 10px;
+      @include text-font;
+    }
+  }
+}

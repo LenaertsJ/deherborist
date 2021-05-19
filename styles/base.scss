@@ -1,0 +1,52 @@
+@import "./variables.scss";
+
+* {
+  margin: 0px;
+}
+
+body {
+  background-color: $white;
+}
+
+//HOMEPAGE CONTENT
+.homepage {
+  height: 92vh;
+  background-image: url("../public/images/nikolett-harmat.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.quote {
+  position: absolute;
+  bottom: 100px;
+  right: 80px;
+  color: $white;
+  @include quote-font;
+}
+
+//HERBARIUM CONTENT
+.herbarium-container {
+  display: flex;
+  position: relative;
+}
+.herbarium-img {
+  height: 87vh;
+  margin-left: 65px;
+}
+
+.page-title {
+  @include page-title;
+  // margin-left: 50px;
+  height: 120px;
+  position: absolute;
+  bottom: 210px;
+  left: 280px;
+}
+
+.result-list {
+  list-style-type: none;
+  position: absolute;
+  right: 34%;
+  top: 50px;
+}

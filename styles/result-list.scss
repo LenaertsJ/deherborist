@@ -1,0 +1,34 @@
+@import "./variables.scss";
+
+.result-item {
+  @include text-font;
+  text-decoration: none;
+  margin-bottom: 25px;
+  a {
+    text-decoration: none;
+    color: $text-color;
+    &:hover {
+      color: $accent-pink;
+    }
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    width: 17%;
+    height: 25px;
+    left: 30px;
+  }
+}
+
+#item-1:before {
+  border-bottom: solid 3px $text-color;
+}
+#item-2:before {
+  border-bottom: solid 3px $accent-pink;
+}
+#item-3:before {
+  border-bottom: solid 3px $dark-green;
+}
+#item-4:before {
+  border-bottom: solid 3px $accent-yellow;
+}

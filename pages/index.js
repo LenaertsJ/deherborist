@@ -1,5 +1,3 @@
-import ContentBox from "../components/content-box";
-
 export default function Home() {
   return (
     <main>

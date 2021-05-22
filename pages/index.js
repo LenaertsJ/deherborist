@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main>
+    <main className="container">
       <div className="landingpage">
         <p className="quote">
           "They say we have to nurture our garden, but of course it's our garden

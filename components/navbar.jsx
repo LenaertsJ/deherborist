@@ -14,7 +14,7 @@ function Navbar() {
         <Menu right width={'400px'}>
             <a id="home" className="menu-item" href="/">Home</a>
             <a id="home" className="menu-item" href="/about">About</a>
-            <a id="home" className="menu-item" href="/herbarium">Herbarium</a>
+            <a id="home" className="menu-item" href="/plants">Herbarium</a>
             <a id="home" className="menu-item" href="/shop">Shop</a>
         </Menu>
         </>

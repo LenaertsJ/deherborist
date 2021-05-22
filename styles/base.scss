@@ -10,7 +10,12 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  background-color: $white;
+  // background-color: $white;
+}
+
+.container {
+  padding-top: 10vh;
+  height: 90vh;
 }
 
 //HOMEPAGE CONTENT
@@ -20,11 +25,12 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 .quote {
   position: absolute;
-  bottom: 100px;
+  bottom: 200px;
   right: 80px;
   color: $white;
   @include quote-font;
@@ -46,16 +52,10 @@ body {
 }
 
 //HERBARIUM CONTENT
-.herbarium-container {
-  // display: flex;
-  // position: relative;
-  // height: 100vh;
-}
 .herbarium-img {
-  height: 97vh;
+  height: 87vh;
   margin-left: 20px;
 }
-
 .page-title {
   @include page-title;
   // margin-left: 50px;
@@ -64,10 +64,26 @@ body {
   bottom: 230px;
   left: 290px;
 }
-
 .result-list {
   list-style-type: none;
   position: absolute;
   right: 34%;
   top: 140px;
+}
+
+//PLANT DETAIL
+.inner-container {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  .plant-img {
+    height: 70vh;
+    margin-left: 100px;
+    border: 1px solid $accent-yellow;
+    padding: 10px;
+  }
+  .plant-title {
+    font-size: 30px;
+    height: 120px;
+  }
 }

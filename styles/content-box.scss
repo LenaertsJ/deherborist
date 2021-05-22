@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+.content-box {
+  display: flex;
+  align-items: center;
+  .content-frame {
+    position: absolute;
+    right: 90px;
+    bottom: 150px;
+    width: 40%;
+    height: 50%;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    .content-title {
+      transfrom: rotate(90deg);
+    }
+    .btn-next {
+      border: none;
+      transform: rotate(270deg);
+      background-color: transparent;
+    }
+  }
+}

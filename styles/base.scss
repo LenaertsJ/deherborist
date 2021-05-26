@@ -77,10 +77,53 @@ body {
   align-items: center;
   height: 90vh;
   position: relative;
+  &-shop {
+    justify-content: center;
+  }
   .plant-img {
     height: 70vh;
     margin-left: 100px;
     border: 1px solid $accent-yellow;
     padding: 10px;
   }
+}
+
+//SHOP
+.section-shop {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:before {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: -1;
+    background-size: cover;
+    opacity: 0.95;
+  }
+}
+.tea:before {
+  content: "";
+  background-image: url("/images/bundo-kim.jpeg");
+  // margin-left: 10px;
+}
+.art:before {
+  content: "";
+  background-image: url("/images/severin-candrian.jpeg");
+  // margin-right: 10px;
+}
+.section-title {
+  text-transform: uppercase;
+  @include title-font;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.548);
+  padding: 20px;
+  cursor: pointer;
 }

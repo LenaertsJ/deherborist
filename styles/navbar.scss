@@ -12,11 +12,13 @@
 .main-title {
   flex: 1;
   padding-left: 20px;
+  width: fit-content;
   @include title-font;
 }
 
 .logo {
   flex: 1;
+  width: fit-content;
 }
 
 /* Position and sizing of burger button */

@@ -1,0 +1,19 @@
+@mixin make-col($cols, $gap) {
+  display: flex;
+  flex-wrap: wrap;
+  > *:nth-child(1n + 0) {
+    width: calc(calc(100% - #{($cols - 1) * $gap}) / #{$cols});
+    margin: 0 $gap $gap 0;
+  }
+  > *:nth-child(#{$cols}n + 0) {
+    margin-right: 0;
+  }
+}
+
+//images (@extend responsive-img)
+
+%responsive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

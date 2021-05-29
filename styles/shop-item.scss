@@ -1,0 +1,50 @@
+@import "./_variables.scss";
+
+.card {
+  padding: 10px;
+  background-color: $grey;
+  max-width: 350px;
+}
+
+.content-wrapper {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+
+.item-img {
+  display: block;
+  width: 80%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.add-btn {
+  width: 50px;
+  margin-left: 30px;
+  .basket-small {
+    width: 100%;
+  }
+}
+
+.item-title {
+  @include subtitle-font;
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+input {
+  width: 25px;
+  border: none;
+  line-height: 20px;
+  text-align: center;
+}
+
+.add-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}

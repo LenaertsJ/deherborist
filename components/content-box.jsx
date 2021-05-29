@@ -12,7 +12,7 @@ function ContentBox() {
               consectetur adipis Lorem ipsum dolor sit amet, consectetur adipis
               Lorem ipsum dolor sit amet, consectetur adipis.
             </p>
-            <button className="btn-next"><img src="/images/arrow.svg"></img></button>
+            <button className="btn btn-next"><img src="/images/arrow.svg"></img></button>
       </div>
     )
 }

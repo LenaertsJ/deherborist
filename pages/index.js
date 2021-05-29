@@ -8,7 +8,7 @@ export default function Home() {
         </p>
       </div>
       <div id="site-overview">
-        <div class="overview-section">
+        <div className="overview-section">
           <img src="/images/bundo-kim.jpeg" className="overview-img"></img>
           <div className="overview-box">
             <p className="overview-text">
@@ -24,7 +24,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div class="overview-section">
+        <div className="overview-section">
           <img src="/images/pressed_flower.jpg" className="overview-img"></img>
           <div className="overview-box">
             <p className="overview-text">

@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import "./_variables.scss";
 
 .search-container {
   position: absolute;
@@ -7,13 +7,13 @@
   width: 35%;
   @include text-font;
   .btn {
-    outline: none;
-    background-color: transparent;
-    border: none;
+    // outline: none;
+    // background-color: transparent;
+    // border: none;
     @include text-font;
     color: $accent-pink;
     padding: 0;
-    cursor: pointer;
+    // cursor: pointer;
   }
   .search-word {
     font-size: 25px;

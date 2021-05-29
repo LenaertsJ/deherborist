@@ -1,4 +1,5 @@
-@import "./variables.scss";
+@import "./_variables.scss";
+@import "./_mixins.scss";
 
 * {
   margin: 0px;
@@ -10,12 +11,24 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  box-sizing: border-box;
   // background-color: $white;
 }
 
 .container {
   padding-top: 10vh;
   height: 90vh;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 //HOMEPAGE CONTENT
@@ -88,7 +101,7 @@ body {
   }
 }
 
-//SHOP
+//SHOP LANDING PAGE
 .section-shop {
   background-size: cover;
   background-position: center;
@@ -126,4 +139,34 @@ body {
   background-color: rgba(255, 255, 255, 0.548);
   padding: 20px;
   cursor: pointer;
+}
+
+//SHOP SECTION
+
+.hero {
+  width: 100%;
+  min-height: 60vh;
+  max-height: 90vh;
+  background-color: $grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-section-img {
+  display: block;
+  width: 50%;
+}
+
+.shop-overview {
+  // background-color: red;
+  padding: 5%;
+}
+
+.items-wrapper {
+  width: 80vw;
+  margin: 0 auto;
+  @include make-col(3, 70px);
+  // background-color: blue;
+  text-align: center;
 }

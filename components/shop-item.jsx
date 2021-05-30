@@ -1,13 +1,14 @@
 import Link from 'next/link';
 
-function ShopItem() {
+function ShopItem({item}) {
     return (
-        <Link href="/shop/infusies/name">
+        <Link href={`/shop/infusies/${item.id}/${item.name}`}>
             <a className="shop-item-link">
                 <div className="card">
                     <div className="content-wrapper">
-                        <h2 className="item-title">Morning Dew</h2>
-                        <img className="item-img" src="/images/gareth-hubbard.jpeg"></img>
+                        <h2 className="item-title">{item.name}</h2>
+                        <img className="item-img" src={item.image}></img>
+                        <p>Prijs: {item.prices[0].amount} euro</p>
                     </div>
                 </div>
             </a>

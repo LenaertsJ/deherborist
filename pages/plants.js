@@ -51,10 +51,6 @@ function Plants() {
     }
   };
 
-  // useEffect(() => {
-  //   console.log(result);
-  // }, [result]);
-
   return (
     <main className="container">
       <div className="inner-container">
@@ -67,6 +63,7 @@ function Plants() {
           value={value}
           handleClickEvent={handleClickEvent}
           options={options}
+          type={type}
         />
       </div>
     </main>

@@ -1,6 +1,9 @@
+import { useState } from "react";
 import Link from "next/link";
 
 function Shop() {
+  const [section, setSection] = useState("");
+
   return (
     <main className="container">
       <div className="inner-container inner-container-shop">
@@ -13,7 +16,7 @@ function Shop() {
         </div>
         <div className="section-shop art">
           <Link href="/shop/bloemenkunst">
-            <div className="section-title">
+            <div className="section-title ">
               <h2>bloemenkunst</h2>
             </div>
           </Link>

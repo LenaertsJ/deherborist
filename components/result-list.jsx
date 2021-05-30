@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Slugify from "slugify";
 
 function ResultList({result}) {
 
@@ -6,7 +7,7 @@ function ResultList({result}) {
         <ul className="result-list">
             {result.map((item, i) => {
             const name = item.name.toLowerCase();
-            return (<li className="result-item" id={"item-" + (i + 1)} key={item.id}><Link href={"/plants/" + item.id + "/" + name}><a>{name}</a></Link></li>)})
+            return (<li className="result-item" id={"item-" + (i + 1)} key={item.id}><Link href={"/plants/" + item.id + "/" + Slugify(name, {lower:true, strict:true})}><a>{name}</a></Link></li>)})
             
             }
         </ul>

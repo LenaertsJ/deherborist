@@ -23,7 +23,7 @@ function ShopSection({ items }) {
       <div className="shop-overview">
         <div className="items-wrapper">
           {items.map((item) => (
-            <ShopItem key={item.id} item={item} />
+            <ShopItem key={item.id} item={item} category={category} />
           ))}
           {/* <ShopItem />
           <ShopItem />

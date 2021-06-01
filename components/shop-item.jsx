@@ -21,9 +21,3 @@ export default ShopItem
 
 
 
-// <form className="add-form">
-// <button className="btn quantity-btn">-</button>
-// <input className="quantity-selector" type="integer" defaultValue=""></input>
-// <button className="btn quantity-btn">+</button>
-// <button className="btn add-btn"><img className="basket-small" src="/images/basket.svg"></img></button>
-// </form>

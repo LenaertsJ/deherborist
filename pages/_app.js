@@ -8,6 +8,7 @@ import "../styles/searchform.scss";
 import "../styles/result-list.scss";
 import "../styles/content-box.scss";
 import "../styles/shop-item.scss";
+import "../styles/product-detail.scss";
 
 function MyApp({ Component, pageProps }) {
   return (

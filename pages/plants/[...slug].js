@@ -14,11 +14,8 @@ function PlantDetail({ plant }) {
 
 export async function getStaticProps(context) {
   const [id] = context.params.slug;
-  const plant = await axios
-    .get(`http://127.0.0.1:8000/api/plants/${id}`)
-    .then((response) => response.data)
-    .catch((error) => console.log(error));
-  console.log(plant);
+  const data = await axios(`http://127.0.0.1:8000/api/plants/${id}`);
+  const plant = data.data;
 
   return {
     props: {
@@ -28,16 +25,15 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const plants = await axios
-    .get(`http://127.0.0.1:8000/api/plants`)
-    .then((response) => response.data["hydra:member"])
-    .catch((error) => console.log(error));
+  const data = await axios(`http://127.0.0.1:8000/api/plants`);
+  const plants = data.data["hydra:member"];
 
   return {
     paths: plants.map((plant) => ({
       params: { slug: [plant.id.toString(), plant.name] },
     })),
     fallback: "blocking",
+    //add revalidate
   };
 }
 

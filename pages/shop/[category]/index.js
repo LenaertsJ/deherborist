@@ -1,5 +1,4 @@
-import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
-import ShopItem from "../../components/shop-item";
+import ShopItem from "../../../components/shop-item";
 import axios from "axios";
 import { useRouter } from "next/router";
 
@@ -25,12 +24,6 @@ function ShopSection({ items }) {
           {items.map((item) => (
             <ShopItem key={item.id} item={item} category={category} />
           ))}
-          {/* <ShopItem />
-          <ShopItem />
-          <ShopItem />
-          <ShopItem />
-          <ShopItem />
-          <ShopItem /> */}
         </div>
       </div>
     </main>
@@ -40,11 +33,10 @@ function ShopSection({ items }) {
 export async function getStaticProps(context) {
   console.log(context);
   const [category] = context.params.category;
-  const items = await axios
-    .get(`http://127.0.0.1:8000/api/products?category.name=${category}`)
-    .then((response) => response.data["hydra:member"])
-    .catch((error) => console.log(error));
-  // console.log(items);
+  const data = await axios(
+    `http://127.0.0.1:8000/api/products?category.name=${category}`
+  );
+  const items = data.data["hydra:member"];
 
   return {
     props: {
@@ -54,16 +46,15 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const categories = await axios
-    .get(`http://127.0.0.1:8000/api/categories`)
-    .then((response) => response.data["hydra:member"])
-    .catch((error) => console.log(error));
+  const data = await axios(`http://127.0.0.1:8000/api/categories`);
+  const categories = data.data["hydra:member"];
 
   return {
     paths: categories.map((category) => ({
       params: { category: category.name },
     })),
     fallback: "blocking",
+    //add revalidate
   };
 }
 

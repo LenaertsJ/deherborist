@@ -30,6 +30,7 @@ body {
 a {
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 
 //HOMEPAGE CONTENT
@@ -175,6 +176,40 @@ a {
   width: 80vw;
   margin: 0 auto;
   @include make-col(3, 70px);
-  // background-color: blue;
   text-align: center;
+}
+
+//PRODUCT DETAIL
+.product-inner {
+  min-height: 100%;
+  display: flex;
+  .left-section {
+    min-height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    .img-container {
+      width: 700px;
+      height: 500px;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  .right-section {
+    width: 30%;
+    min-height: 100%;
+    margin-left: auto;
+    .nav-box {
+      border-bottom: 1px solid black;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }

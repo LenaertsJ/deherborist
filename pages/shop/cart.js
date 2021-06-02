@@ -1,12 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Counter from "../../components/counter";
 
 // import { VscArrowDown } from "react-icons/vsc";
 import CartItem from "../../components/cart-item";
 
 function Cart({ cart, handleRemove }) {
+  const [total, setTotal] = useState();
+
   useEffect(() => {
-    console.log(cart);
+    const sum = cart.reduce((sum, item) => {
+      return sum + item.price * item.quantity;
+    }, 0);
+    setTotal(sum);
   }, [cart]);
 
   return (
@@ -29,7 +34,7 @@ function Cart({ cart, handleRemove }) {
 
             <div className="cart-totals flex">
               <p className="quantity">Totaal aantal: 2</p>
-              <p className="price">Totale prijs: 9 €</p>
+              <p className="price">Totale prijs: {total} €</p>
             </div>
           </div>
         )}

@@ -29,7 +29,7 @@ function CartItem({cartItem, handleRemove}) {
             <div className="product-price flex">
                 <Counter quantity={quantity} handleCounterClick={handleCounterClick}/>
                 <p className="price">Prijs: {cartItem.price} €</p>
-                <TiDeleteOutline className="icon" onClick={ handleRemove }/>
+                <TiDeleteOutline className="icon" onClick={() => handleRemove(cartItem.id) }/>
             </div>
         </div>
     )

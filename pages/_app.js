@@ -37,10 +37,8 @@ function MyApp({ Component, pageProps }) {
     setCart([...cart, selectedProduct]);
   };
 
-  const handleRemove = (e) => {
-    e.preventDefault();
-    console.log(e);
-    // setCart();
+  const handleRemove = (itemId) => {
+    setCart(cart.filter((item) => item.id !== itemId));
   };
 
   return (

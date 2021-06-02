@@ -5,9 +5,10 @@ import Counter from "../../components/counter";
 import CartItem from "../../components/cart-item";
 
 function Cart({ cart, handleRemove }) {
-  // useEffect(() => {
-  //   console.log(cart);
-  // });
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
+
   return (
     <main className="container">
       <div className="inner-cart">

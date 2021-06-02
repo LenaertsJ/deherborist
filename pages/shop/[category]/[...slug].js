@@ -6,19 +6,24 @@ import axios from "../../axios";
 
 import ProductDetail from "../../../components/product-detail";
 
-function Product({
-  product,
-  handleCounterClick,
-  handleSubmitClick,
-  quantity,
-  cart,
-}) {
+function Product({ product, handleSubmitClick, cart }) {
   const router = useRouter();
 
-  // //LOCAL STORAGE
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
+  //STATES
+  const [quantity, setQuantity] = useState(1);
+
+  //HANDLERS
+  const handleCounterClick = (e) => {
+    e.preventDefault();
+    const min = 0;
+    //change this value by available stock
+    const max = 4;
+    if (e.target.innerText === "+") {
+      quantity < max ? setQuantity(quantity + 1) : quantity;
+    } else {
+      quantity > min ? setQuantity(quantity - 1) : quantity;
+    }
+  };
 
   return (
     <main className="container">

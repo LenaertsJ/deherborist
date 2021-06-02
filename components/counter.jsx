@@ -1,6 +1,6 @@
 function Counter({quantity, handleCounterClick}) {
     return (
-        <>
+        <div className="quantity">
             <button className="btn quantity-btn" onClick={handleCounterClick}>-</button>
             <input
                 className="quantity-selector"
@@ -9,7 +9,7 @@ function Counter({quantity, handleCounterClick}) {
                 value={quantity}
             ></input>
             <button className="btn quantity-btn" onClick={handleCounterClick}>+</button>
-        </>
+        </div>
     )
 }
 

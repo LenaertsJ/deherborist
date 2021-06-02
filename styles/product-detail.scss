@@ -13,6 +13,7 @@
   .to-cart-form {
     width: 100%;
     margin-top: 30px;
+    display: flex;
     input {
       @include text-font;
     }

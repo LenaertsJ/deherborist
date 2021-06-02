@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }) {
   //HANDLERS
   const handleSubmitClick = (e) => {
     e.preventDefault();
+
     const id = parseInt(e.target[0].value);
     const name = e.target[1].value;
     const price = parseInt(e.target[2].value);

@@ -1,5 +1,3 @@
-
-
 function Searchform({handleClickEvent, handleSubmit, handleChange, options, type}) {
 
     type === "plants" ? type = "plant" : type = "eigenschap"

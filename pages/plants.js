@@ -1,28 +1,29 @@
 import { useEffect, useState } from "react";
-
-const axios = require("axios").default;
+import persistedState from "use-persisted-state";
 
 import ResultList from "../components/result-list";
 import Searchform from "../components/searchform";
 
+import axios from "./axios";
+
 function Plants() {
   //STATES
+  const useResultState = persistedState("result");
+
   const [type, setType] = useState("plants");
   const [options, setOptions] = useState([]);
   const [value, setValue] = useState("");
-  const [result, setResult] = useState(
-    JSON.parse(localStorage.getItem("result-list")) || []
-  );
+  const [result, setResult] = useResultState([]);
 
-  //LOCALSTORAGE
-  useEffect(() => {
-    localStorage.setItem("result-list", JSON.stringify(result));
-  }, [result]);
+  //STORAGE
+  // useEffect(() => {
+  //   console.log(result);
+  // }, [result]);
 
   //FETCH
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/${type}`)
+      .get(`/${type}`)
       .then((response) => setOptions(response.data["hydra:member"]))
       .catch((error) => console.log(error));
   }, [type]);
@@ -39,7 +40,6 @@ function Plants() {
 
   const handleChange = (e) => {
     setValue(e.target.value);
-    console.log(e.target.value);
   };
 
   /**
@@ -51,12 +51,12 @@ function Plants() {
     e.preventDefault();
     if (type === "plants") {
       axios
-        .get(`http://127.0.0.1:8000/api/plants?name=${value}`)
+        .get(`plants?name=${value}`)
         .then((response) => setResult(response.data["hydra:member"]))
         .catch((error) => console.log(error));
     } else {
       axios
-        .get(`http://127.0.0.1:8000/api/qualities?name=${value}`)
+        .get(`qualities?name=${value}`)
         .then((response) =>
           setResult(response.data["hydra:member"][0]["plants"])
         )

@@ -230,6 +230,7 @@ a {
       text-transform: capitalize;
     }
   }
+
   .flex {
     display: flex;
     @include text-font;
@@ -238,7 +239,12 @@ a {
   .cart-content {
     flex-direction: column;
     justify-content: space-between;
-    min-height: 40vh;
+    height: 40vh;
+    // width: 90%;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   .quantity {
@@ -259,11 +265,19 @@ a {
     }
     .product-price {
       justify-content: flex-end;
+      align-items: center;
+      .icon {
+        margin-left: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        color: $accent-pink;
+      }
     }
   }
   .cart-totals {
     justify-content: flex-end;
     border-top: 1px solid black;
     padding-top: 15px;
+    margin-top: 50px;
   }
 }

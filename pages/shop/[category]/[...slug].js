@@ -6,37 +6,18 @@ import axios from "../../axios";
 
 import ProductDetail from "../../../components/product-detail";
 
-function Product({ product }) {
+function Product({
+  product,
+  handleCounterClick,
+  handleSubmitClick,
+  quantity,
+  cart,
+}) {
   const router = useRouter();
 
-  //COUNTER
-  const [counter, setCounter] = useState(1);
-  const [cart, setCart] = useState({});
-
-  const handleCounterClick = (e) => {
-    e.preventDefault();
-    const min = 0;
-    //change this value by available stock
-    const max = 4;
-    if (e.target.innerText === "+") {
-      counter < max ? setCounter(counter + 1) : counter;
-    } else {
-      counter > min ? setCounter(counter - 1) : counter;
-    }
-  };
-
-  const handleSubmitClick = (e) => {
-    e.preventDefault();
-    setCart({
-      id: product.id,
-      name: product.name,
-      price: product.prices[0].amount,
-      amount: counter,
-    });
-  };
-
+  // //LOCAL STORAGE
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log(cart);
   }, [cart]);
 
   return (
@@ -55,10 +36,9 @@ function Product({ product }) {
           </div>
           <ProductDetail
             product={product}
-            cart={cart}
             handleCounterClick={handleCounterClick}
             handleSubmitClick={handleSubmitClick}
-            counter={counter}
+            quantity={quantity}
           />
         </div>
       </div>

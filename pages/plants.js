@@ -6,11 +6,28 @@ import ResultList from "../components/result-list";
 import Searchform from "../components/searchform";
 
 function Plants() {
+  //STATES
   const [type, setType] = useState("plants");
   const [options, setOptions] = useState([]);
   const [value, setValue] = useState("");
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState(
+    JSON.parse(localStorage.getItem("result-list")) || []
+  );
 
+  //LOCALSTORAGE
+  useEffect(() => {
+    localStorage.setItem("result-list", JSON.stringify(result));
+  }, [result]);
+
+  //FETCH
+  useEffect(() => {
+    axios
+      .get(`http://127.0.0.1:8000/api/${type}`)
+      .then((response) => setOptions(response.data["hydra:member"]))
+      .catch((error) => console.log(error));
+  }, [type]);
+
+  //HANDLERS
   const handleClickEvent = (e) => {
     const btnValue = e.target.innerText;
     if (btnValue === "plant") {
@@ -25,14 +42,10 @@ function Plants() {
     console.log(e.target.value);
   };
 
-  useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:8000/api/${type}`)
-      .then((response) => setOptions(response.data["hydra:member"]))
-      .catch((error) => console.log(error));
-  }, [type]);
-
-  //TODO : REFACTOR THIS
+  /**
+   *
+   * refactor handleSubmit
+   */
 
   const handleSubmit = (e) => {
     e.preventDefault();

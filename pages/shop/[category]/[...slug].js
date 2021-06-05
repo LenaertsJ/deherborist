@@ -6,24 +6,24 @@ import axios from "../../axios";
 
 import ProductDetail from "../../../components/product-detail";
 
-function Product({ product, handleSubmitClick, cart }) {
+function Product({ product, handleSubmitClick }) {
   const router = useRouter();
 
-  //STATES
-  const [quantity, setQuantity] = useState(1);
+  // //STATES
+  // const [quantity, setQuantity] = useState(1);
 
-  //HANDLERS
-  const handleCounterClick = (e) => {
-    e.preventDefault();
-    const min = 0;
-    //change this value by available stock
-    const max = 4;
-    if (e.target.innerText === "+") {
-      quantity < max ? setQuantity(quantity + 1) : quantity;
-    } else {
-      quantity > min ? setQuantity(quantity - 1) : quantity;
-    }
-  };
+  // //HANDLERS
+  // const handleCounterClick = (e) => {
+  //   e.preventDefault();
+  //   const min = 0;
+  //   //change this value by available stock
+  //   const max = 4;
+  //   if (e.target.innerText === "+") {
+  //     quantity < max ? setQuantity(quantity + 1) : quantity;
+  //   } else {
+  //     quantity > min ? setQuantity(quantity - 1) : quantity;
+  //   }
+  // };
 
   return (
     <main className="container">
@@ -39,12 +39,7 @@ function Product({ product, handleSubmitClick, cart }) {
               <BsFillGrid1X2Fill />
             </a>
           </div>
-          <ProductDetail
-            product={product}
-            handleCounterClick={handleCounterClick}
-            handleSubmitClick={handleSubmitClick}
-            quantity={quantity}
-          />
+          <ProductDetail product={product} />
         </div>
       </div>
     </main>

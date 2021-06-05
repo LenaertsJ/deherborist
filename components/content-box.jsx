@@ -7,18 +7,19 @@ function ContentBox({plant}) {
     return (
       <div className="content-box">
             <h2 className="content-title">{ content }</h2>
-            <p className="content-text">
+            <div className="content-text">
+              <ul>
               {
-                plant.qualities.map((quality) => (
-                  <ul>
-                    <li>
+                plant.qualities.map((quality, i) => (
+                    <li key={i}>
                       <h4> {quality.name} </h4>
                       <p> {quality.description} </p>
                     </li>
-                  </ul>
+
                 ))
               }
-            </p>
+              </ul>
+            </div>
             <button className="btn btn-next"><img src="/images/arrow.svg"></img></button>
       </div>
     )

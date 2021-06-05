@@ -38,6 +38,8 @@ export async function getStaticProps(context) {
   );
   const items = data.data["hydra:member"];
 
+  console.log(items);
+
   return {
     props: {
       items,
@@ -48,6 +50,8 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const data = await axios(`http://127.0.0.1:8000/api/categories`);
   const categories = data.data["hydra:member"];
+
+  console.log(categories);
 
   return {
     paths: categories.map((category) => ({

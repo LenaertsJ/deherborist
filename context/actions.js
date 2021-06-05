@@ -1,16 +1,34 @@
 import { ADD_ITEM, REMOVE_ITEM, ADJUST_QUANTITY } from "./actionConstants";
 
-export const addItem = (item, quantity) => ({
+export const addItem = (product, quantity) => ({
   type: ADD_ITEM,
-  payload: { item, quantity },
+  payload: {
+    product: {
+      id: product.id,
+      name: product.name,
+      category: product.category.name,
+      price: product.prices[0].brutoPrice,
+      stock: product.stock,
+    },
+    quantity,
+  },
 });
 
-export const removeItemFromCart = (item) => ({
+export const removeItemFromCart = (product) => ({
   type: REMOVE_ITEM,
-  payload: item,
+  payload: product.id,
 });
 
-export const adjustQuantity = (item, quantity) => ({
+export const adjustQuantity = (product, quantity) => ({
   type: ADJUST_QUANTITY,
-  payload: { item, quantity },
+  payload: {
+    product: {
+      id: product.id,
+      name: product.name,
+      category: product.category,
+      price: product.price,
+      stock: product.stock,
+    },
+    quantity,
+  },
 });

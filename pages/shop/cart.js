@@ -1,18 +1,26 @@
-import { useEffect, useState } from "react";
-import Counter from "../../components/counter";
-
-// import { VscArrowDown } from "react-icons/vsc";
+import { useEffect, useState, useContext } from "react";
 import CartItem from "../../components/cart-item";
+import { CartContext } from "../../context/cart";
+import Link from "next/link";
 
-function Cart({ cart, handleRemove }) {
-  const [total, setTotal] = useState();
+function Cart() {
+  const { state: items } = useContext(CartContext);
+  const [totalPrice, setTotalPrice] = useState();
+  const [totalQuantity, setTotalQuantity] = useState();
 
   useEffect(() => {
-    const sum = cart.reduce((sum, item) => {
-      return sum + item.price * item.quantity;
+    console.log(items);
+
+    const sum = items.reduce((sum, item) => {
+      return sum + item.product.price * item.quantity;
     }, 0);
-    setTotal(sum);
-  }, [cart]);
+    setTotalPrice(Math.round(sum * 100) / 100);
+
+    const sumQuantity = items.reduce((sum, item) => {
+      return sum + item.quantity;
+    }, 0);
+    setTotalQuantity(sumQuantity);
+  }, [items]);
 
   return (
     <main className="container">
@@ -20,25 +28,27 @@ function Cart({ cart, handleRemove }) {
         <h3 className="cart-title">
           <span>m</span>andje
         </h3>
-        {cart.length > 0 && (
+        {items.length > 0 && (
           <div className="cart-content flex">
-            {cart.map((cartItem) => {
+            {items.map((item) => {
               return (
                 <CartItem
-                  cartItem={cartItem}
-                  handleRemove={handleRemove}
-                  key={cartItem.id}
+                  key={item.product.id}
+                  product={item.product}
+                  quantity={item.quantity}
                 />
               );
             })}
-
             <div className="cart-totals flex">
-              <p className="quantity">Totaal aantal: 2</p>
-              <p className="price">Totale prijs: {total} €</p>
+              <p className="quantity">Totaal aantal: {totalQuantity}</p>
+              <p className="price">Totale prijs: {totalPrice} €</p>
             </div>
           </div>
         )}
-        {cart.length === 0 && <p>Jouw mandje is nog leeg...</p>}
+        {items.length === 0 && <p>Jouw mandje is nog leeg...</p>}
+        <Link href="/shop/checkout">
+          <button className="btn btn-checkout">Checkout</button>
+        </Link>
       </div>
     </main>
   );

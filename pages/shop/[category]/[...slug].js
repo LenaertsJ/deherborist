@@ -6,31 +6,15 @@ import axios from "../../axios";
 
 import ProductDetail from "../../../components/product-detail";
 
-function Product({ product, handleSubmitClick }) {
+function Product({ product }) {
   const router = useRouter();
-
-  // //STATES
-  // const [quantity, setQuantity] = useState(1);
-
-  // //HANDLERS
-  // const handleCounterClick = (e) => {
-  //   e.preventDefault();
-  //   const min = 0;
-  //   //change this value by available stock
-  //   const max = 4;
-  //   if (e.target.innerText === "+") {
-  //     quantity < max ? setQuantity(quantity + 1) : quantity;
-  //   } else {
-  //     quantity > min ? setQuantity(quantity - 1) : quantity;
-  //   }
-  // };
 
   return (
     <main className="container">
       <div className="product-inner">
         <div className="left-section">
           <div className="img-container">
-            <img src={product.image}></img>
+            <img src={product.imageUrl}></img>
           </div>
         </div>
         <div className="right-section">

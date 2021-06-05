@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { CartContext } from '../context/cart';
 import { useContext, useState, useEffect } from 'react';
 
-import { addItem, removeItem, adjustQuantity } from '../context/actions';
+import { addItem } from '../context/actions';
 
 function ProductDetail({ product }) {
 
@@ -20,9 +20,11 @@ function ProductDetail({ product }) {
     return (
         <div className="product-info">
             <h4 className="product-title">{ product.name }</h4>
-            <p>prijs: {product.prices[0].amount} €</p>
-            <div className="btn-container">
-                <div className="quantity">
+            <p className="product-price">prijs: {product.prices[0].brutoPrice} €</p>
+            {product.stock === 1 && <p className="stock-msg">Nog maar één beschikbaar...</p>}
+            {product.stock === 0 && <p className="stock-msg">Dit product is helaas uitverkocht...</p>}
+            <div className="btn-container">    
+                <div className="counter">
                     <button className="btn quantity-btn" disabled={count === 1} onClick={decrementCounter}>-</button>
                     <p>{ count }</p>
                     <button className="btn quantity-btn" disabled={count === product.stock} onClick={incrementCounter}>+</button>

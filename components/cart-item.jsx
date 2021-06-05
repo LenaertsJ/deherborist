@@ -1,35 +1,37 @@
 import { TiDeleteOutline } from "react-icons/ti";
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { CartContext } from '../context/cart';
+import { adjustQuantity, removeItemFromCart } from '../context/actions'
 
-import Counter from '../components/counter';
+function CartItem({product, quantity}) {
 
-function CartItem({cartItem, handleRemove}) {
-    //STATES
-    const [quantity, setQuantity] = useState(cartItem.quantity);
+    // const [count, setCount] = useState(quantity)
+    const { dispatch } = useContext(CartContext);
 
-    //HANDLERS
-    const handleCounterClick = (e) => {
-    e.preventDefault();
-    const min = 0;
-    //change this value by available stock
-    const max = 4;
-    if (e.target.innerText === "+") {
-      quantity < max ? setQuantity(quantity + 1) : quantity;
-    } else {
-      quantity > min ? setQuantity(quantity - 1) : quantity;
-    }
-  };
+    // const decrementCounter = () => setCount(count - 1)
+    // const incrementCounter = () => setCount(count + 1);
+
+    // useEffect(() => {
+    //     return () => {
+    //         dispatch(adjustQuantity(product, quantity))
+    //     }
+    // }, [count])
 
     return (
         <div className="cart-products flex">
             <div className="product-details">
-                <h4 className="product-title">Product: {cartItem.name}</h4>
-                <p className="product-category">Type: {cartItem.category}</p>
+                <h4 className="product-title">Product: {product.name}</h4>
+                <p className="product-category">Type: {product.category}</p>
             </div>
             <div className="product-price flex">
-                <Counter quantity={quantity} handleCounterClick={handleCounterClick}/>
-                <p className="price">Prijs: {cartItem.price} €</p>
-                <TiDeleteOutline className="icon" onClick={() => handleRemove(cartItem.id) }/>
+                <p className="quantity">Quantity: {quantity}</p>
+                {/* <div className="counter">
+                    <button className="btn quantity-btn" disabled={count === 1} onClick={decrementCounter}>-</button>
+                    <p>{ count }</p>
+                    <button className="btn quantity-btn" disabled={count === product.stock} onClick={incrementCounter}>+</button>
+                </div> */}
+                <p className="price">Prijs: {product.price} €</p>
+                <TiDeleteOutline className="icon" onClick={()=> dispatch(removeItemFromCart(product))}/>
             </div>
         </div>
     )

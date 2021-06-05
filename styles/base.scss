@@ -33,6 +33,11 @@ a {
   cursor: pointer;
 }
 
+.counter {
+  display: flex;
+  align-items: center;
+}
+
 //HOMEPAGE CONTENT
 .landingpage {
   height: 100vh;
@@ -215,13 +220,13 @@ a {
 }
 
 //CART
-
 .inner-cart {
   width: 60vw;
   min-height: 60vh;
   margin: 70px auto 0px auto;
   border: 1px solid black;
   padding: 30px;
+  position: relative;
   .cart-title {
     @include subtitle-font;
     text-align: center;
@@ -246,7 +251,18 @@ a {
       display: none;
     }
   }
-
+  .btn-checkout {
+    border: 1px solid black;
+    padding: 10px;
+    @include text-font;
+    position: absolute;
+    right: -1px;
+    bottom: -60px;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
   .quantity {
     margin-right: 8px;
     padding-right: 8px;

@@ -1,8 +1,8 @@
-import ShopItem from "../../../components/shop-item";
+import ProductCard from "../../../components/product-card";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-function ShopSection({ items }) {
+function ShopSection({ products }) {
   const router = useRouter();
   const category = router.query.category;
 
@@ -21,8 +21,12 @@ function ShopSection({ items }) {
       </div>
       <div className="shop-overview">
         <div className="items-wrapper">
-          {items.map((item) => (
-            <ShopItem key={item.id} item={item} category={category} />
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              category={category}
+            />
           ))}
         </div>
       </div>
@@ -31,18 +35,15 @@ function ShopSection({ items }) {
 }
 
 export async function getStaticProps(context) {
-  console.log(context);
   const [category] = context.params.category;
   const data = await axios(
     `http://127.0.0.1:8000/api/products?category.name=${category}`
   );
-  const items = data.data["hydra:member"];
-
-  console.log(items);
+  const products = data.data["hydra:member"];
 
   return {
     props: {
-      items,
+      products,
     },
   };
 }
@@ -50,8 +51,6 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const data = await axios(`http://127.0.0.1:8000/api/categories`);
   const categories = data.data["hydra:member"];
-
-  console.log(categories);
 
   return {
     paths: categories.map((category) => ({

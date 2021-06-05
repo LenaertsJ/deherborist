@@ -1,26 +1,17 @@
-import React from "react";
+import CheckoutForm from "../../components/checkout-form";
 
-function Checkout() {
+const SignupForm = () => {
   return (
     <main className="container">
-      <form>
-        <label for="name">Voornaam:</label>
-        <input type="text" name="firstname"></input>
-        <label for="lastname">Familienaam:</label>
-        <input type="text" name="lastname"></input>
-        <label for="email">Email:</label>
-        <input type="text" name="email"></input>
-        <label for="street">Straat:</label>
-        <input type="text" name="street"></input>
-        <label for="housenr">Huisnummer:</label>
-        <input type="text" name="housenr"></input>
-        <label for="city">Stad:</label>
-        <input type="text" name="city"></input>
-        <label for="country">Land:</label>
-        <input type="text" name="country"></input>
-      </form>
+      <div className="checkout-inner">
+        {/* <div>
+          <h3>Je bestelling:</h3>
+          <p>product 1</p>
+        </div> */}
+        <CheckoutForm />
+      </div>
     </main>
   );
-}
+};
 
-export default Checkout;
+export default SignupForm;

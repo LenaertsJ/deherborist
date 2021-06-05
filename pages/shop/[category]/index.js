@@ -1,5 +1,5 @@
 import ProductCard from "../../../components/product-card";
-import axios from "axios";
+import axios from "../../../axios";
 import { useRouter } from "next/router";
 
 function ShopSection({ products }) {
@@ -36,9 +36,7 @@ function ShopSection({ products }) {
 
 export async function getStaticProps(context) {
   const [category] = context.params.category;
-  const data = await axios(
-    `http://127.0.0.1:8000/api/products?category.name=${category}`
-  );
+  const data = await axios(`products?category.name=${category}`);
   const products = data.data["hydra:member"];
 
   return {
@@ -49,7 +47,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const data = await axios(`http://127.0.0.1:8000/api/categories`);
+  const data = await axios(`categories`);
   const categories = data.data["hydra:member"];
 
   return {

@@ -4,7 +4,7 @@ import persistedState from "use-persisted-state";
 import ResultList from "../components/result-list";
 import Searchform from "../components/searchform";
 
-import axios from "./axios";
+import axios from "../axios";
 
 function Plants() {
   //STATES

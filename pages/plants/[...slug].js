@@ -1,5 +1,5 @@
 import Contentbox from "../../components/content-box";
-import axios from "axios";
+import axios from "../../axios";
 
 function PlantDetail({ plant }) {
   return (

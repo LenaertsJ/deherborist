@@ -5,6 +5,10 @@
   margin: 0px;
 }
 
+:root {
+  font-size: 62.5%;
+}
+
 html,
 body {
   width: 100%;
@@ -40,7 +44,7 @@ a {
 
 //HOMEPAGE CONTENT
 .landingpage {
-  height: 100vh;
+  height: 90vh;
   background-image: url("../public/images/nikolett-harmat.jpeg");
   background-position: center;
   background-size: cover;
@@ -48,7 +52,8 @@ a {
   position: relative;
 }
 
-.quote {
+.quote-text {
+  text-align: right;
   position: absolute;
   bottom: 200px;
   right: 80px;
@@ -58,17 +63,42 @@ a {
 
 .overview-section {
   display: flex;
-  width: 80vw;
+  justify-content: space-between;
+  align-items: center;
+  width: 70vw;
   margin: 0 auto;
-  padding: 200px;
+  padding: 10%;
 }
 
-.overview-img {
-  width: 25%;
-}
-
-.overview-box {
+// IMAGE CONTAINERS
+.image-container-vertical {
   width: 35%;
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.image-container-horizontal {
+  width: 50%;
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+//TEXT CONTAINERS
+.content-container {
+  width: 550px;
+  .title-container {
+    @include title-font;
+    margin-bottom: 3rem;
+  }
+  .text-container {
+    @include text-font;
+    line-height: 1.5;
+    text-align: justify;
+  }
 }
 
 //HERBARIUM CONTENT

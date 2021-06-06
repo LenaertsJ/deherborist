@@ -3,8 +3,9 @@ import Layout from "../components/layout";
 import CartProvider from "../context/cart";
 
 //styles
-import "../styles/navbar.scss";
 import "../styles/base.scss";
+import "../styles/media-queries.scss";
+import "../styles/navbar.scss";
 import "../styles/searchform.scss";
 import "../styles/result-list.scss";
 import "../styles/content-box.scss";

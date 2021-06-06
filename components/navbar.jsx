@@ -10,13 +10,13 @@ function Navbar() {
             <div className="logo">
                 <img src="/images/logo-herborist.svg"></img>
             </div>
-            <Link href="/shop/cart"><a>
+            {/* <Link href="/shop/cart"><a>
                 <div className="cart-link">cart</div>
-            </a></Link>
+            </a></Link> */}
         </div>
         <Menu right width={'400px'}>
             <a id="home" className="menu-item" href="/">Home</a>
-            <a id="home" className="menu-item" href="/about">About</a>
+            <a id="home" className="menu-item" href="#about">About</a>
             <a id="home" className="menu-item" href="/plants">Herbarium</a>
             <a id="home" className="menu-item" href="/shop">Shop</a>
         </Menu>

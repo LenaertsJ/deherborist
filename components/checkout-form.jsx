@@ -3,55 +3,59 @@ import * as Yup from "yup";
 import axios from '../axios';
 
 function CheckoutForm() {
+
+  const initialValues = {
+    firstname: "",
+    lastname: "",
+    email: "",
+    street: "",
+    housenr: "",
+    postalCode: "",
+    city: "",
+    country: "",
+  }
+  const yupSchema = Yup.object({
+    firstname: Yup.string().required("Required"),
+    lastname: Yup.string().required("Required"),
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Required"),
+    street: Yup.string().required("Required"),
+    housenr: Yup.number().required("Required"),
+    postalCode: Yup.number().required("Required"),
+    city: Yup.string().required("Required"),
+    country: Yup.string().required("Required"),
+  })
+
     return (
         <Formik
-        initialValues={{
-          firstname: "",
-          lastname: "",
-          email: "",
-          street: "",
-          housenr: "",
-          postalCode: "",
-          city: "",
-          country: "",
-        }}
-        validationSchema={Yup.object({
-          firstName: Yup.string().required("Required"),
-          lastName: Yup.string().required("Required"),
-          email: Yup.string()
-            .email("Invalid email address")
-            .required("Required"),
-          street: Yup.string().required("Required"),
-          housenr: Yup.number().required("Required"),
-          postalCode: Yup.number().required("Required"),
-          city: Yup.string().required("Required"),
-          country: Yup.string().required("Required"),
-        })}
-        onSubmit={({setSubmitting}) => {
-            setSubmitting(true)
-            alert("form is validated")
-        }
+        initialValues={ initialValues }
+        validationSchema= { yupSchema }
+        onSubmit={
 
-            // async function(values){
-            //     const response = await axios({
-            //         url: 'addresses',
-            //         method: "POST",
-            //         data: {
-            //             "street" : values.street,
-            //             "houseNumber" : values.housenr,
-            //             "postalCode" : values.postalCode,
-            //             "city" : values.city,
-            //             "country" : values.country
-            //         } 
-            //     })
-            //     console.log(response.error)
-            //     const addressId = response.data;
-            //     console.log(addressId)
-            // }
-        }
+            async function(values){
+                const response = await axios({
+                    url: 'addresses',
+                    method: "POST",
+                    data: {
+                        "street" : values.street,
+                        "houseNumber" : values.housenr,
+                        "postalCode" : values.postalCode,
+                        "city" : values.city,
+                        "country" : values.country
+                    } 
+                })
+                console.log(response.error)
+                const addressId = response.data;
+                console.log(addressId)
+            }
+          }
       >
-          {({isSubmitting}) => (
-              <Form className="checkout-form">
+        {(props) => {
+          // console.log(props)
+
+          return(
+            <Form className="checkout-form">
               <label htmlFor="firstname">Voornaam</label>
               <Field name="firstname" type="text" className="form-input" />
               <ErrorMessage name="firstname" className="error-msg" />
@@ -81,21 +85,21 @@ function CheckoutForm() {
               <ErrorMessage name="city" className="error-msg" />
     
               <label htmlFor="country">Land</label>
+              {/* <Field name="country" type="text" className="form-input" /> */}
               <Field
                 name="country"
-                type="text"
                 as="select"
                 className="form-input"
               >
-                <option value="belgium">België</option>
-                <option value="netherlands">Nederland</option>
+                <option value="belgië">België</option>
+                <option value="nederland">Nederland</option>
               </Field>
               <ErrorMessage name="country" className="error-msg" />
     
               <button type="submit">Submit</button>
             </Form>
-          )}
-        
+          )
+        }}
       </Formik>
     )
 }

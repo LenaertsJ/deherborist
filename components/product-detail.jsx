@@ -12,10 +12,10 @@ function ProductDetail({ product }) {
     const decrementCounter = () => setCount(count - 1);
     const incrementCounter = () => setCount(count + 1);
 
-    useEffect(() => {
-        console.log(state)
-        console.log(product.stock)
-    })
+    // useEffect(() => {
+    //     console.log(state)
+    //     console.log(product.stock)
+    // })
 
     return (
         <div className="product-info">

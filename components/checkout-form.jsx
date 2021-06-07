@@ -42,12 +42,34 @@ function CheckoutForm() {
                         "houseNumber" : values.housenr,
                         "postalCode" : values.postalCode,
                         "city" : values.city,
-                        "country" : values.country
+                        "country" : values.country,
+                        "customers" : [
+                          {"firstname" : values.firstname,
+                           "lastname" : values.lastname,
+                           "email" : values.email
+                          }
+                        ]
                     } 
                 })
-                console.log(response.error)
-                const addressId = response.data;
-                console.log(addressId)
+                const data = await response.data;
+                console.log(data);
+
+                const responseOrder = await axios({
+                  url: 'orders',
+                  method: "POST",
+                  data: {
+                    "address" : `api/addresses/${data.id}`,
+                    "totalPrice" : 13.45,
+                    "totalItems" : 3,
+                    "customer" : `api/customers/${data.customers[0].id}`,
+                    "orderedProducts" : [{
+                      "product" : "api/products/2",
+                      "price" : 4.54
+                    }]
+                  }
+                })
+                const dataOrder = responseOrder.data;
+                console.log(dataOrder);
             }
           }
       >

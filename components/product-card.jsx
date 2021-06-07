@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Slugify from 'slugify'
 
 function ProductCard({product, category}) {
-    console.log(product)
     return (
         <Link href={`/shop/${category}/${product.id}/${Slugify(product.name, {lower: true, strict: true})}`}>
             <a className="shop-product-link">

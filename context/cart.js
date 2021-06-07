@@ -1,20 +1,12 @@
-import { createContext, useReducer } from "react";
+import { createContext } from "react";
 import { ADD_ITEM, REMOVE_ITEM, ADJUST_QUANTITY } from "./actionConstants";
+import createPersistedReducer from "use-persisted-reducer";
 
-const initialState = [
-  {
-    product: {
-      id: 2,
-      name: "flower ring",
-      category: "bloemenkunst",
-      price: 12.33,
-      stock: 4,
-    },
-    quantity: 4,
-  },
-];
+const initialState = [];
 
 //REDUCER
+const usePersistedReducer = createPersistedReducer("basket");
+
 const reducer = (state, action) => {
   const { product, quantity } = action.payload;
   switch (action.type) {
@@ -56,7 +48,7 @@ const reducer = (state, action) => {
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = usePersistedReducer(reducer, initialState);
 
   return (
     <CartContext.Provider value={{ state, dispatch }}>

@@ -17,6 +17,7 @@
     "react-icons": "^4.2.0",
     "sass": "^1.32.13",
     "slugify": "^1.5.3",
+    "use-persisted-reducer": "^2.1.0",
     "use-persisted-state": "^0.3.3",
     "yup": "^0.32.9"
   }

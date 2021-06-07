@@ -99,6 +99,16 @@ a {
     line-height: 1.5;
     text-align: justify;
   }
+  .subtitle-container {
+    @include subtitle-font;
+  }
+}
+
+.list-container {
+  @include text-font;
+  ul {
+    list-style-type: none;
+  }
 }
 
 //HERBARIUM CONTENT

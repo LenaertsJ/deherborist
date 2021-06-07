@@ -3,7 +3,7 @@
 //fonts
 @mixin title-font {
   font-family: "Jura";
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: light;
   color: $title-color;
   text-decoration: none;
@@ -12,15 +12,15 @@
 
 @mixin subtitle-font {
   font-family: "Arapey";
-  font-size: 25px;
-  font-weight: light;
+  font-size: 2.5rem;
+  font-weight: bold;
   color: black;
   text-decoration: none;
 }
 
 @mixin page-title {
   font-family: "Arapey";
-  font-size: 110px;
+  font-size: 11rem;
   color: $accent-yellow;
   text-transform: uppercase;
   transform: rotate(270deg);
@@ -28,7 +28,7 @@
 
 @mixin quote-font {
   font-family: "Arapey";
-  font-size: 22px;
+  font-size: 2.2rem;
 }
 
 @mixin text-font {
@@ -38,7 +38,7 @@
 
 @mixin menu-font {
   font-family: "Jura";
-  font-size: 20px;
+  font-size: 2rem;
   color: $white;
   text-decoration: none;
   text-transform: uppercase;

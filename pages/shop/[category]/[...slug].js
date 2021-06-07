@@ -2,7 +2,7 @@ import { BsFillGrid1X2Fill } from "react-icons/bs";
 
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import axios from "../../axios";
+import axios from "../../../axios";
 
 import ProductDetail from "../../../components/product-detail";
 
@@ -43,8 +43,8 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const data = await axios(`http://127.0.0.1:8000/api/products`);
-  const products = data.data["hydra:member"];
+  const response = await axios(`http://127.0.0.1:8000/api/products.json`);
+  const products = await response.data;
 
   return {
     paths: products.map((product) => ({

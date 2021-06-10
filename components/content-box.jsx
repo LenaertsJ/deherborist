@@ -5,25 +5,45 @@ function ContentBox({plant}) {
   const [content, setContent] = useState("medicinale eigenschappen")
 
     return (
-      <div id="plant-detail" className="content-box">
-            <h2 className="content-title">{ content }</h2>
-            <div className="content-text">
+      <div className="inner-content">
+        <div className="text-container">
+          <div className="flex">
+            <div className="subtitle-container">
+              <h2 className="content-title">{ content }</h2>
+            </div>
               <div className="list-container">
                 <ul>
-                {
+                  <li>
+                    <h4 className="subtitle-container">Rustgevend</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolorum ex quam totam nesciunt corrupti blanditiis laborum! Voluptatibus atque molestias nostrum, soluta tempora voluptate consequuntur?</p>
+                  </li>
+                  <li>
+                    <h4 className="subtitle-container">Rustgevend</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolorum ex quam totam nesciunt corrupti blanditiis laborum! Voluptatibus atque molestias nostrum, soluta tempora voluptate consequuntur?</p>
+                  </li>
+                  <li>
+                    <h4 className="subtitle-container">Rustgevend</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolorum ex quam totam nesciunt corrupti blanditiis laborum! Voluptatibus atque molestias nostrum, soluta tempora voluptate consequuntur?</p>
+                  </li>
+                {/* {
                   plant.qualities.map((quality, i) => (
                       <li key={i}>
-                        <div className="subtitle-container">
-                          <h4> {quality.name} </h4>
-                        </div>
+                        <h4 className="subtitle-container"> {quality.name} </h4>
                         <div dangerouslySetInnerHTML={{__html:quality.description}}></div>
                       </li>
                   ))
-                }
+                } */}
                 </ul>
               </div>
+          </div>
+            <div className="text-container symboliek">
+              <div className="subtitle-container ">
+                <h2>symboliek</h2>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolorum ex quam totam nesciunt corrupti blanditiis laborum! Voluptatibus atque molestias nostrum, soluta tempora voluptate consequuntur?</p>
             </div>
-            <button className="btn btn-next"><img src="/images/arrow.svg"></img></button>
+          </div>
+
       </div>
     )
 }

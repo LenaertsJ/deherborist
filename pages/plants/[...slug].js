@@ -4,11 +4,18 @@ import axios from "../../axios";
 function PlantDetail({ plant }) {
   return (
     <main className="container">
-      <div className="inner-container">
-        <div class="image-container-vertical">
-          <img className="plant-img" src={plant.imageUrl} />
+      <div id="plant-detail" className="inner-container">
+        <div id="detail-img" class="image-container-vertical">
+          <img src={plant.imageUrl} />
         </div>
-        <Contentbox plant={plant} />
+        <div className="content-container">
+          <Contentbox plant={plant} />
+          <div className="arrow-container">
+            <div className="arm left-arm"></div>
+            <div className="arm right-arm"></div>
+            <div className="stem"></div>
+          </div>
+        </div>
       </div>
     </main>
   );

@@ -47,8 +47,35 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 90vh;
     position: relative;
+  }
+  //TEXT CONTAINERS
+  .content-container {
+    width: 550px;
+    .title-container {
+      @include title-font;
+      margin-bottom: 3rem;
+    }
+    .text-container {
+      @include text-font;
+      line-height: 1.5;
+      text-align: justify;
+    }
+    .subtitle-container {
+      @include subtitle-font;
+    }
+  }
+
+  .list-container {
+    @include text-font;
+    ul {
+      list-style-type: none;
+      li {
+        margin-bottom: 15px;
+      }
+    }
   }
 }
 
@@ -115,8 +142,8 @@ a {
     @include text-font;
   }
   #herbarium-img {
-    margin-left: 20px;
     width: 550px;
+    margin-left: 20px;
   }
   #herbarium-title {
     @include page-title;
@@ -133,44 +160,55 @@ a {
   }
 }
 
-//TEXT CONTAINERS
-.content-container {
-  width: 550px;
-  .title-container {
-    @include title-font;
-    margin-bottom: 3rem;
-  }
-  .text-container {
-    @include text-font;
-    line-height: 1.5;
-    text-align: justify;
-  }
-  .subtitle-container {
-    @include subtitle-font;
-  }
-}
-
-.list-container {
-  @include text-font;
-  ul {
-    list-style-type: none;
-  }
-}
-
 //PLANT DETAIL
-.inner-container {
-  display: flex;
-  align-items: center;
-  height: 90vh;
-  position: relative;
-  &-shop {
-    justify-content: center;
+#plant-detail {
+  #detail-img {
+    width: 500px;
+    margin-left: 80px;
   }
-  .plant-img {
-    height: 70vh;
-    margin-left: 100px;
-    border: 1px solid $accent-yellow;
-    padding: 10px;
+  .content-container {
+    background-color: $white;
+    height: 70%;
+    width: 50%;
+    margin-right: 80px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .arrow-container {
+      // background-color: grey;
+      height: 180px;
+      width: 30px;
+      position: absolute;
+      right: 23px;
+      bottom: 80px;
+      // background-color: grey;
+      .arm {
+        width: 20px;
+        border: 0.5px solid black;
+      }
+      .left-arm {
+        transform: rotate(55deg);
+        position: absolute;
+        left: -2px;
+        bottom: 9px;
+      }
+      .right-arm {
+        transform: rotate(-55deg);
+        position: absolute;
+        left: 10px;
+        bottom: 9px;
+      }
+      .stem {
+        position: absolute;
+        bottom: 77px;
+        right: -61px;
+        width: 150px;
+        border: 0.5px solid black;
+        transform: rotate(90deg);
+      }
+    }
   }
 }
 

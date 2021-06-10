@@ -1,3 +1,5 @@
+import { GiPestleMortar } from "react-icons/gi";
+
 function Searchform({handleClickEvent, handleSubmit, handleChange, options, type}) {
 
     type === "plants" ? type = "plant" : type = "eigenschap"
@@ -13,7 +15,7 @@ function Searchform({handleClickEvent, handleSubmit, handleChange, options, type
                 </select> 
             </div>
            
-            <button type="submit" className="btn search-btn"><img className="btn-icon" src="/images/mortar-pestle.svg"></img></button>
+            <button type="submit" className="btn search-btn"><GiPestleMortar className="icon"/></button>
         </form>
         </div>
     )

@@ -20,8 +20,36 @@ body {
 }
 
 .container {
-  padding-top: 10vh;
-  height: 90vh;
+  min-height: 92vh;
+  // display: flex;
+  // align-items: center;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  // IMAGE CONTAINERS
+  .image-container-vertical {
+    width: 35%;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .image-container-horizontal {
+    width: 50%;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .inner-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    position: relative;
+  }
 }
 
 .btn {
@@ -29,6 +57,10 @@ body {
   background-color: transparent;
   cursor: pointer;
   outline: none;
+}
+.icon {
+  font-size: 6rem;
+  color: $subtitle-color;
 }
 
 a {
@@ -43,47 +75,61 @@ a {
 }
 
 //HOMEPAGE CONTENT
-.landingpage {
-  height: 90vh;
+#landingpage {
+  width: 100%;
+  height: 93vh;
   background-image: url("../public/images/nikolett-harmat.jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-}
-
-.quote-text {
-  text-align: right;
-  position: absolute;
-  bottom: 200px;
-  right: 80px;
-  color: $white;
-  @include quote-font;
-}
-
-.overview-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 70vw;
-  margin: 0 auto;
-  padding: 10%;
-}
-
-// IMAGE CONTAINERS
-.image-container-vertical {
-  width: 35%;
-  img {
-    width: 100%;
-    object-fit: contain;
+  .quote-text {
+    text-align: right;
+    position: absolute;
+    bottom: 200px;
+    right: 80px;
+    color: $white;
+    @include quote-font;
   }
 }
 
-.image-container-horizontal {
-  width: 50%;
-  img {
-    width: 100%;
-    object-fit: contain;
+#about {
+  display: block;
+  .overview-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70vw;
+    margin: 0 auto;
+    padding: 10%;
+  }
+}
+
+//HERBARIUM
+#herbarium {
+  .search-container {
+    position: absolute;
+    right: 80px;
+    bottom: 60px;
+    width: 35%;
+    @include text-font;
+  }
+  #herbarium-img {
+    margin-left: 20px;
+    width: 550px;
+  }
+  #herbarium-title {
+    @include page-title;
+    height: 120px;
+    position: absolute;
+    bottom: 224px;
+    left: 25%;
+  }
+  .result-list {
+    list-style-type: none;
+    position: absolute;
+    right: 34%;
+    top: 140px;
   }
 }
 
@@ -109,26 +155,6 @@ a {
   ul {
     list-style-type: none;
   }
-}
-
-//HERBARIUM CONTENT
-.herbarium-img {
-  height: 87vh;
-  margin-left: 20px;
-}
-.page-title {
-  @include page-title;
-  // margin-left: 50px;
-  height: 120px;
-  position: absolute;
-  bottom: 230px;
-  left: 290px;
-}
-.result-list {
-  list-style-type: none;
-  position: absolute;
-  right: 34%;
-  top: 140px;
 }
 
 //PLANT DETAIL

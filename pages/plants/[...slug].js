@@ -5,7 +5,9 @@ function PlantDetail({ plant }) {
   return (
     <main className="container">
       <div className="inner-container">
-        <img className="plant-img" src={plant.imageUrl}></img>
+        <div class="image-container-vertical">
+          <img className="plant-img" src={plant.imageUrl} />
+        </div>
         <Contentbox plant={plant} />
       </div>
     </main>

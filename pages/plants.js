@@ -66,9 +66,11 @@ function Plants() {
 
   return (
     <main className="container">
-      <div className="inner-container">
-        <img src="/images/nathan-dumlao.jpeg" className="herbarium-img"></img>
-        <h2 className="page-title herbarium-title">herbarium</h2>
+      <div id="herbarium" className="inner-container">
+        <div id="herbarium-img" class="image-container-vertical">
+          <img src="/images/nathan-dumlao.jpeg" />
+        </div>
+        <h2 id="herbarium-title">herbarium</h2>
         {result.length > 0 && <ResultList result={result} />}
         <Searchform
           handleChange={handleChange}

@@ -1,19 +1,10 @@
 @import "./_variables.scss";
 
 .search-container {
-  position: absolute;
-  right: 80px;
-  bottom: 60px;
-  width: 35%;
-  @include text-font;
   .btn {
-    // outline: none;
-    // background-color: transparent;
-    // border: none;
     @include text-font;
     color: $accent-pink;
     padding: 0;
-    // cursor: pointer;
   }
   .search-word {
     font-size: 25px;
@@ -22,6 +13,7 @@
   .search-form {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 20px;
     .select-div {
       min-width: 85%;

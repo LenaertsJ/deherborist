@@ -10,16 +10,24 @@ function Navbar() {
             <div className="logo">
                 <img src="/images/logo-herborist.svg"></img>
             </div>
-            <Link href="/shop/cart"><a>
-                <div className="cart-link">cart</div>
-            </a></Link>
+            <div className="menu">
+                <Link href="/plants"><a>
+                    <div className="link">herbarium</div>
+                </a></Link>
+                <Link href="/shop"><a>
+                    <div className="link">shop</div>
+                </a></Link>
+                <Link href="/shop/cart"><a>
+                    <div className="link">cart</div>
+                </a></Link>
+            </div>
         </div>
-        <Menu right width={'400px'}>
+        {/* <Menu right width={'400px'}>
             <a id="home" className="menu-item" href="/">Home</a>
             <a id="home" className="menu-item" href="#about">About</a>
             <a id="home" className="menu-item" href="/plants">Herbarium</a>
             <a id="home" className="menu-item" href="/shop">Shop</a>
-        </Menu>
+        </Menu> */}
         </>
     )
 }

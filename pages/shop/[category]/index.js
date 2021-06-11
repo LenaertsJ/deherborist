@@ -9,15 +9,19 @@ function ShopSection({ products }) {
   return (
     <main className="container">
       <div className="hero">
-        {category === "infusies" ? (
-          <img className="shop-section-img" src="/images/lisa-hobbs.jpg"></img>
+        {/* {category === "infusies" ? (
+          <img className="shop-section-img" src="/images/lisa-hobbs.jpg" />
         ) : (
           <img
             className="shop-section-img"
             src="/images/micheile-henderson.jpeg"
           ></img>
-        )}
-        <h1 className="section-title">{category}</h1>
+        )} */}
+        <div className="border-outer">
+          <div className="border-inner">
+            <h1 className="category">{category}</h1>
+          </div>
+        </div>
       </div>
       <div className="shop-overview">
         <div className="items-wrapper">

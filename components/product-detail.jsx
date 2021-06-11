@@ -31,9 +31,8 @@ function ProductDetail({ product }) {
                 </div>
                 <button className="btn add-btn" onClick={() => dispatch(addItem(product, count))}>In mandje</button>
             </div>
-            <p className="product-description">
-                { product.description }
-            </p>
+            <div className="product-description" dangerouslySetInnerHTML={{__html: product.description}}>
+            </div>
             <ul className="plant-list">
                 {product.plants.map((plant) => (<Link key={plant.id} href={`/plants/${plant.id}/${plant.name}`}><a><li className="plant-list-item">{plant.name}</li></a></Link>))}
             </ul>

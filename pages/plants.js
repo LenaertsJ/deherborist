@@ -67,7 +67,7 @@ function Plants() {
   return (
     <main className="container">
       <div id="herbarium" className="inner-container">
-        <div id="herbarium-img" class="image-container-vertical">
+        <div id="herbarium-img" className="image-container-vertical">
           <img src="/images/nathan-dumlao.jpeg" />
         </div>
         <h2 id="herbarium-title">herbarium</h2>

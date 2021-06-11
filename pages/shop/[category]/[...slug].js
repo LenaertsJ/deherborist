@@ -11,16 +11,16 @@ function Product({ product }) {
 
   return (
     <main className="container">
-      <div className="product-inner">
+      <div className="product-detail-inner">
         <div className="left-section">
-          <div className="img-container">
-            <img src={product.imageUrl}></img>
+          <div className="product-detail-img">
+            <img src={product.imageUrl} />
           </div>
         </div>
         <div className="right-section">
           <div className="nav-box">
             <a onClick={() => router.back()}>
-              <BsFillGrid1X2Fill />
+              <BsFillGrid1X2Fill className="icon" />
             </a>
           </div>
           <ProductDetail product={product} />

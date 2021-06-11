@@ -20,10 +20,9 @@
 
 @mixin page-title {
   font-family: "Arapey";
-  font-size: 11rem;
+  font-size: 6rem;
   color: $accent-yellow;
   text-transform: uppercase;
-  transform: rotate(270deg);
 }
 
 @mixin quote-font {

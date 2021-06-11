@@ -7,7 +7,6 @@
   height: 90%;
   width: 80%;
   @include text-font;
-  overflow: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
@@ -27,13 +26,13 @@
       .content-title {
         @include subtitle-font;
         color: $accent-yellow;
-        font-size: 4rem;
+        font-size: 3.5rem;
         text-transform: uppercase;
         width: 590px;
         transform: rotate(270deg);
         position: absolute;
         left: -257px;
-        bottom: 300px;
+        bottom: 340px;
       }
     }
     .list-container {

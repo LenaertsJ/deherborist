@@ -1,51 +1,44 @@
 @import "./_variables.scss";
 
-.card {
-  padding: 10px;
-  background-color: $grey;
-  max-width: 350px;
-}
+.shop-product-link {
+  .card {
+    background-color: rgba(241, 241, 241, 0.521);
+    border-radius: 5px;
+    box-shadow: 0 0 20px 8px #d0d0d0;
+    position: relative;
+    &:hover {
+      box-shadow: 0 0 15px 5px #d0d0d0;
 
-.content-wrapper {
-  background-color: $white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2%;
-}
-
-.product-img {
-  display: block;
-  width: 100%;
-  height: 170px;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-
-.add-btn {
-  width: 50px;
-  margin-left: 30px;
-  .basket-small {
-    width: 100%;
+      // &:after {
+      //   content: "bekijk";
+      //   @include text-font;
+      //   text-transform: uppercase;
+      //   background-color: rgba(200, 206, 203, 0.904);
+      //   padding-top: 25px;
+      //   padding-bottom: 25px;
+      //   position: absolute;
+      //   top: 0px;
+      //   right: 0px;
+      //   left: 0px;
+      // }
+    }
+    .product-img {
+      width: 100%;
+      height: 200px;
+      border-radius: 5px;
+      img {
+        object-fit: cover;
+      }
+    }
+    .info-container {
+      padding: 20px;
+      .product-title {
+        @include menu-font;
+        color: $subtitle-color;
+      }
+      p {
+        @include text-font;
+      }
+    }
   }
-}
-
-.product-title {
-  @include subtitle-font;
-  font-size: 25px;
-  margin-top: 30px;
-}
-
-// input {
-//   width: 25px;
-//   border: none;
-//   line-height: 20px;
-//   text-align: center;
-// }
-
-.add-form {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
 }

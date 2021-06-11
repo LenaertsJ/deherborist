@@ -9,7 +9,7 @@ const SignupForm = () => {
   return (
     <main className="container">
       <div className="checkout-inner">
-        <div className="content-container">
+        <div className="checkout-overview">
           <div className="title-container">
             <h3>Je bestelling:</h3>
           </div>

@@ -6,7 +6,7 @@ function Shop() {
 
   return (
     <main className="container">
-      <div className="inner-container inner-container-shop">
+      <div className="inner-container shop">
         <div className="section-shop tea">
           <Link href="/shop/infusies">
             <div className="section-title">

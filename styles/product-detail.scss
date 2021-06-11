@@ -15,11 +15,17 @@
   }
   .stock-msg {
     color: $accent-pink;
+    background-color: $accent-yellow;
+    line-height: 2;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
   .btn-container {
     width: 100%;
     margin-top: 30px;
     display: flex;
+    justify-content: space-between;
     input {
       @include text-font;
     }
@@ -28,10 +34,16 @@
       border: 1px solid black;
       line-height: 1.9;
       @include text-font;
+      &:hover {
+        background-color: $dark-green;
+        color: $white;
+      }
     }
   }
   .product-description {
     margin-top: 40px;
+    background-color: $white;
+    padding: 10px;
   }
   .plant-list {
     margin-top: 30px;

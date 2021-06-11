@@ -177,27 +177,36 @@ a {
     align-items: center;
     justify-content: center;
     .arrow-container {
-      // background-color: grey;
       height: 180px;
       width: 30px;
       position: absolute;
       right: 23px;
       bottom: 80px;
-      // background-color: grey;
+      cursor: pointer;
       .arm {
-        width: 20px;
-        border: 0.5px solid black;
+        width: 14px;
+        border: 0.5px solid rgb(194, 192, 192);
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0px;
+          bottom: -1px;
+          height: 2px;
+          width: 0px;
+          background: #b3072f;
+        }
       }
       .left-arm {
-        transform: rotate(55deg);
+        transform: rotate(235deg);
         position: absolute;
-        left: -2px;
-        bottom: 9px;
+        left: 3px;
+        bottom: 8px;
       }
       .right-arm {
-        transform: rotate(-55deg);
+        transform: rotate(300deg);
         position: absolute;
-        left: 10px;
+        left: 11px;
         bottom: 9px;
       }
       .stem {
@@ -205,10 +214,52 @@ a {
         bottom: 77px;
         right: -61px;
         width: 150px;
-        border: 0.5px solid black;
+        border: 0.5px solid rgb(194, 192, 192);
         transform: rotate(90deg);
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0px;
+          bottom: -1px;
+          height: 2px;
+          width: 68px;
+          background: #b3072f;
+        }
       }
     }
+    &:hover {
+      .stem {
+        &::after {
+          animation: scroll-animation-stem 2s forwards;
+        }
+      }
+      .arm {
+        &::after {
+          animation: scroll-animation-arm 1.5s forwards;
+          animation-delay: 1.5s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes scroll-animation-stem {
+  0% {
+    left: -1px;
+  }
+  100% {
+    left: 82px;
+  }
+}
+
+@keyframes scroll-animation-arm {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 15px;
   }
 }
 

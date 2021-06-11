@@ -9,6 +9,7 @@
   @include text-font;
   overflow: hidden;
   overflow-y: scroll;
+  scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
   &::-webkit-scrollbar {

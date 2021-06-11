@@ -10,11 +10,14 @@ function PlantDetail({ plant }) {
         </div>
         <div className="content-container">
           <Contentbox plant={plant} />
-          <div className="arrow-container">
-            <div className="arm left-arm"></div>
-            <div className="arm right-arm"></div>
-            <div className="stem"></div>
-          </div>
+          <a href="#symbolism">
+            <div className="arrow-container">
+              <div className="arrow-tag">scroll</div>
+              <div className="arm left-arm"></div>
+              <div className="arm right-arm"></div>
+              <div className="stem"></div>
+            </div>
+          </a>
         </div>
       </div>
     </main>

@@ -36,7 +36,7 @@ function ContentBox({plant}) {
                 </ul>
               </div>
           </div>
-            <div className="text-container symboliek">
+            <div id="symbolism" className="text-container symboliek">
               <div className="subtitle-container ">
                 <h2>symboliek</h2>
               </div>

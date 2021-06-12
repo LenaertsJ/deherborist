@@ -8,15 +8,36 @@
   background-color: rgb(252, 252, 252);
   padding-top: 8px;
   padding-bottom: 8px;
+  position: relative;
   .main-title {
     padding-left: 20px;
     width: fit-content;
     @include title-font;
   }
+  .hamburger-menu {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    // background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .line {
+      width: 100%;
+      border: 1px solid black;
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+      &:hover {
+      }
+    }
+  }
   .menu {
     display: flex;
     justify-content: space-between;
     margin-right: 10px;
+    display: none;
     .link {
       text-transform: uppercase;
       margin-right: 10px;
@@ -30,6 +51,8 @@
     }
   }
   .logo {
-    width: fit-content;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
   }
 }

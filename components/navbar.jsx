@@ -21,9 +21,10 @@ function Navbar() {
                 </a></Link>
             </div>
             <div className="hamburger-menu">
-                <div className="line line-top"></div>
-                <div className="line line-middle"></div>
-                <div className="line line-bottom"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
             </div>
         </div>
         </>

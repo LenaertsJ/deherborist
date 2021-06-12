@@ -11,6 +11,7 @@ import "../styles/result-list.scss";
 import "../styles/content-box.scss";
 import "../styles/product-card.scss";
 import "../styles/product-detail.scss";
+import "../styles/checkout-form.scss";
 
 function MyApp({ Component, pageProps }) {
   return (

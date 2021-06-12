@@ -1,0 +1,52 @@
+@import "./variables";
+
+.checkout-form {
+  @include text-font;
+  width: 35%;
+  margin-right: 10%;
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  input {
+    @include text-font;
+    font-size: 1.5rem;
+    line-height: 2;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .form-elements {
+    display: flex;
+    justify-content: space-between;
+    .name-wrapper {
+      width: 45%;
+    }
+    .address-wrapper {
+      width: 75%;
+    }
+    .number-wrapper {
+      width: 15%;
+    }
+  }
+  .error-msg {
+    display: block;
+    color: $accent-pink;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .btn-order {
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 20px;
+    &:hover {
+      background-color: $light-green;
+      border: none;
+      color: $title-color;
+    }
+  }
+}

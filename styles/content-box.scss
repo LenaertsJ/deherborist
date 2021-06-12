@@ -3,7 +3,7 @@
 .inner-content {
   position: relative;
   padding-right: 80px;
-  padding-top: 15px;
+  // padding-top: 15px;
   height: 90%;
   width: 80%;
   @include text-font;
@@ -20,7 +20,7 @@
     }
     align-items: center;
     .subtitle-container {
-      width: 25%;
+      width: 15%;
       // position: relative;
       margin-right: 20px;
       .content-title {
@@ -36,11 +36,14 @@
       }
     }
     .list-container {
-      min-height: 550px;
+      min-height: 500px;
+      margin-top: 50px;
+      width: 100%;
     }
     .symboliek {
+      min-height: 500px;
       margin-left: 23px;
-      margin-top: 50px;
+      width: 100%;
       .subtitle-container {
         color: $accent-pink;
         text-transform: uppercase;

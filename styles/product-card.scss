@@ -35,6 +35,7 @@
       .product-title {
         @include menu-font;
         color: $subtitle-color;
+        margin-bottom: 10px;
       }
       p {
         @include text-font;

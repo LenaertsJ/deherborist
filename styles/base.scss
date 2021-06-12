@@ -18,6 +18,7 @@ body {
   padding: 0px;
   overflow-x: hidden;
   box-sizing: border-box;
+  overflow-x: initial;
 }
 
 .container {
@@ -42,7 +43,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    height: 93vh;
     position: relative;
   }
   //TEXT CONTAINERS
@@ -485,42 +486,34 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .checkout-form {
-    @include text-font;
-    width: 40%;
-    margin-right: 10%;
-    input {
-      @include text-font;
-      font-size: 1.5rem;
-      line-height: 2;
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-      margin-top: 10px;
-      // &::-webkit-validation-bubble-message {
-      //   display: none;
-      // }
-    }
-    .error-msg {
-      color: $accent-pink;
-    }
-    .btn-order {
-      border: 1px solid black;
-      padding: 10px;
-      margin-top: 20px;
-      &:hover {
-        background-color: black;
-        color: white;
-      }
-    }
-  }
+
   .checkout-overview {
     @include text-font;
     margin-left: 10%;
+    min-height: 400px;
+    width: 30%;
+    border: 1px solid $title-color;
+    padding: 30px;
+    .checkout-wrapper {
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
     .title-container {
       @include subtitle-font;
       text-transform: uppercase;
       margin-bottom: 30px;
+    }
+    .text-container {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .total {
+      font-weight: bold;
+      border-top: 2px solid $title-color;
+      padding-top: 10px;
     }
   }
 }

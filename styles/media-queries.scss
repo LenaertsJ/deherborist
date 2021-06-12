@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./mixins";
 
 //15" SCREEN
 @media screen and (max-width: 1500px) {
@@ -22,12 +23,18 @@
       text-align: justify;
     }
   }
+  .items-wrapper {
+    @include make-col(3, 70px);
+  }
 }
 
 // //SMALL SCREEN
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   .content-container {
     width: 50%;
+  }
+  .items-wrapper {
+    @include make-col(2, 70px);
   }
 }
 
@@ -55,24 +62,38 @@
 
 //IPHONE
 @media screen and (max-width: 550px) {
+  // * {
+  //   background: #000 !important;
+  //   color: #0f0 !important;
+  //   outline: solid #f00 1px !important;
+  // }
+  nav-container .menu {
+    display: none;
+  }
   .quote-text {
     font-size: 2rem;
     bottom: 90px;
     width: 60%;
   }
-  .overview-section {
-    display: block;
-    .image-container-vertical {
-      width: 100%;
-      margin: 50px auto;
+
+  //SHOP
+  .items-wrapper {
+    @include make-col(1, 70px);
+  }
+  .hero {
+    .border-outer {
+      width: 300px;
+      height: 80px;
+      .border-inner {
+        width: 260px;
+        padding: 20px;
+      }
     }
-    .image-container-horizontal {
-      width: 100%;
-      margin: 50px auto;
-    }
-    .content-container {
-      width: 90%;
-      margin: 0 auto;
+    .category {
+      @include page-title;
+      font-size: 3rem;
+      color: $white;
+      text-align: center;
     }
   }
 }

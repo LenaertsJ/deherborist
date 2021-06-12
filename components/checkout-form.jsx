@@ -78,47 +78,58 @@ function CheckoutForm() {
 
           return(
             <Form className="checkout-form">
-              <label htmlFor="firstname">Voornaam</label>
-              <Field name="firstname" type="text" className="form-input" />
-              <ErrorMessage name="firstname" className="error-msg" />
+
+              <div className="form-elements">
+              <div className="name-wrapper">
+                <label htmlFor="firstname">Voornaam</label>
+                <Field name="firstname" type="text" className="form-input" />
+                <ErrorMessage component="div" name="firstname" className="error-msg" />
+              </div>
     
-              <label htmlFor="lastname">Familienaam</label>
-              <Field name="lastname" type="text" className="form-input" />
-              <ErrorMessage name="lastname" className="error-msg" />
-    
+              <div className="name-wrapper">
+                <label htmlFor="lastname">Familienaam</label>
+                <Field name="lastname" type="text" className="form-input" />
+                <ErrorMessage component="div" name="lastname" className="error-msg" />
+              </div>
+              </div>
+
               <label htmlFor="email">Email</label>
               <Field name="email" type="email" className="form-input" />
-              <ErrorMessage name="email" className="error-msg" />
+              <ErrorMessage component="div" name="email" className="error-msg" />
+
+              <div className="form-elements">
+              <div className="address-wrapper">
+                <label htmlFor="street">Straat</label>
+                <Field name="street" type="text" className="form-input" />
+                <ErrorMessage component="div" name="street" className="error-msg" />
+              </div>
     
-              <label htmlFor="street">Straat</label>
-              <Field name="street" type="text" className="form-input" />
-              <ErrorMessage name="street" className="error-msg" />
-    
-              <label htmlFor="housenr">Huisnummer</label>
-              <Field name="housenr" type="number" className="form-input" />
-              <ErrorMessage name="housenr" className="error-msg" />
-    
-              <label htmlFor="postalCode">Postcode</label>
-              <Field name="postalCode" type="number" className="form-input" />
-              <ErrorMessage name="postalCode" className="error-msg" />
-    
-              <label htmlFor="city">Stad</label>
-              <Field name="city" type="text" className="form-input" />
-              <ErrorMessage name="city" className="error-msg" />
+              <div className="number-wrapper">
+                <label htmlFor="housenr">Huisnummer</label>
+                <Field name="housenr" type="number" className="form-input" />
+                <ErrorMessage component="div" name="housenr" className="error-msg" />
+              </div>
+              </div>
+
+              <div className="form-elements">
+                <div className="number-wrapper">
+                  <label htmlFor="postalCode">Postcode</label>
+                  <Field name="postalCode" type="number" className="form-input" />
+                  <ErrorMessage component="div" name="postalCode" className="error-msg" />
+                </div>
+
+                <div className="address-wrapper">
+                  <label htmlFor="city">Stad</label>
+                  <Field name="city" type="text" className="form-input" />
+                  <ErrorMessage component="div" name="city" className="error-msg" />
+                </div>
+              </div>
     
               <label htmlFor="country">Land</label>
-              {/* <Field name="country" type="text" className="form-input" /> */}
-              <Field
-                name="country"
-                as="select"
-                className="form-input"
-              >
-                <option value="belgië">België</option>
-                <option value="nederland">Nederland</option>
-              </Field>
-              <ErrorMessage name="country" className="error-msg" />
+              <Field name="country" type="text" className="form-input" />
+              <ErrorMessage component="div" name="country" className="error-msg" />
     
-              <button type="submit">Submit</button>
+              <button className="btn btn-order" type="submit">Submit</button>
             </Form>
           )
         }}

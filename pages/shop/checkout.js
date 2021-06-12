@@ -13,15 +13,21 @@ const SignupForm = () => {
           <div className="title-container">
             <h3>Je bestelling:</h3>
           </div>
-          <div className="text-container">
+
+          <div class="checkout-wrapper">
             {items.map((item) => (
-              <p>
-                {item.product.name}: <span>{item.quantity}</span>
-              </p>
+              <div className="text-container">
+                <p>{item.product.name}:</p>
+                <div class="text-container">
+                  <p>{item.quantity} x </p>
+                  <p>{item.product.price} €</p>
+                </div>
+              </div>
             ))}
-          </div>
-          <div className="text-container">
-            <p>Totaal:{}</p>
+            <div className="text-container total">
+              <p>Totaal:</p>
+              <p>13 €</p>
+            </div>
           </div>
         </div>
         <CheckoutForm cart={items} />

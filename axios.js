@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Axios = axios.create({
-  baseURL: "http://localhost:8000/api/",
+  baseURL: "https://wdev2.be/julie21/eindwerk/api/",
 });
 
 export default Axios;

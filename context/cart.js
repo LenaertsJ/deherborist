@@ -20,19 +20,38 @@ const reducer = (state, action) => {
           cartItem.product.id === product.id
             ? {
                 ...cartItem,
-                quantity: Math.min(cartItem.quantity + quantity, product.stock),
+                quantity: Math.min(
+                  cartItem.quantity + quantity,
+                  cartItem.product.stock
+                ),
+                totalPrice: parseFloat(
+                  (
+                    (cartItem.quantity + quantity) *
+                    cartItem.product.price
+                  ).toFixed(2)
+                ),
               }
             : cartItem
         );
       }
-      return [...state, { product, quantity }];
+
+      const totalPrice = parseFloat((quantity * product.price).toFixed(2));
+
+      return [
+        ...state,
+        {
+          product,
+          quantity,
+          totalPrice,
+        },
+      ];
 
     case ADJUST_QUANTITY:
       return state.map((cartItem) => {
-        cartItem.product.id === product.id
+        cartItem.product.id === action.payload.product
           ? {
               ...cartItem,
-              quantity: Math.min(quantity, product.stock),
+              quantity: Math.min(action.payload.quantity, product.stock),
             }
           : cartItem;
       });

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+    import Link from 'next/link';
 import { CartContext } from '../context/cart';
 import { useContext, useState, useEffect } from 'react';
 
@@ -6,16 +6,11 @@ import { addItem } from '../context/actions';
 
 function ProductDetail({ product }) {
 
-    const { state, dispatch } = useContext(CartContext)
+    const { state = null, dispatch } = useContext(CartContext)
     const [count, setCount] = useState(1)
 
     const decrementCounter = () => setCount(count - 1);
     const incrementCounter = () => setCount(count + 1);
-
-    // useEffect(() => {
-    //     console.log(state)
-    //     console.log(product.stock)
-    // })
 
     return (
         <div className="product-info">

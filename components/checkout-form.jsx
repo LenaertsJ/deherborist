@@ -2,8 +2,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from '../axios';
 
-function CheckoutForm() {
-
+function CheckoutForm({items, totalPrice}) {
+  
   const initialValues = {
     firstname: "",
     lastname: "",
@@ -27,51 +27,61 @@ function CheckoutForm() {
     country: Yup.string().required("Required"),
   })
 
+  const handleSubmit = (items, totalPrice) => async (values) => {
+
+    // POST OF CUSTOMER DETAILS
+      const response = await axios({
+          url: 'addresses',
+          method: "POST",
+          data: {
+              "street" : values.street,
+              "houseNumber" : values.housenr,
+              "postalCode" : values.postalCode,
+              "city" : values.city,
+              "country" : values.country,
+              "customers" : [
+                {"firstname" : values.firstname,
+                 "lastname" : values.lastname,
+                 "email" : values.email
+                }
+              ]
+          } 
+      })
+      const data = await response.data;
+      console.log(data);
+      const itemDetails = items.map((item) => {
+        return {
+          "product" : `api/products/${item.product.id}`,
+          "price" : item.product.price,
+          "quantity" : item.quantity
+        }
+      })
+
+      // POST OF ORDER
+      const responseOrder = await axios({
+        url: 'orders',
+        method: "POST",
+        data: {
+          "address" : `api/addresses/${data.id}`,
+          "totalPrice" : totalPrice,
+          "totalItems" : items.length,
+          "customer" : `api/customers/${data.customers[0].id}`,
+          "orderedProducts" : itemDetails
+        }
+      })
+      const dataOrder = responseOrder.data;
+      console.log(dataOrder);
+  
+  }
+
+
     return (
         <Formik
+        items = { items }
+        totalPrice = { totalPrice }
         initialValues={ initialValues }
         validationSchema= { yupSchema }
-        onSubmit={
-
-            async function(values){
-                const response = await axios({
-                    url: 'addresses',
-                    method: "POST",
-                    data: {
-                        "street" : values.street,
-                        "houseNumber" : values.housenr,
-                        "postalCode" : values.postalCode,
-                        "city" : values.city,
-                        "country" : values.country,
-                        "customers" : [
-                          {"firstname" : values.firstname,
-                           "lastname" : values.lastname,
-                           "email" : values.email
-                          }
-                        ]
-                    } 
-                })
-                const data = await response.data;
-                console.log(data);
-
-                const responseOrder = await axios({
-                  url: 'orders',
-                  method: "POST",
-                  data: {
-                    "address" : `api/addresses/${data.id}`,
-                    "totalPrice" : 13.45,
-                    "totalItems" : 3,
-                    "customer" : `api/customers/${data.customers[0].id}`,
-                    "orderedProducts" : [{
-                      "product" : "api/products/2",
-                      "price" : 4.54
-                    }]
-                  }
-                })
-                const dataOrder = responseOrder.data;
-                console.log(dataOrder);
-            }
-          }
+        onSubmit={ handleSubmit(items, totalPrice) }
       >
         {(props) => {
           // console.log(props)

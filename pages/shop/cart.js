@@ -10,9 +10,9 @@ function Cart() {
 
   useEffect(() => {
     const sum = items.reduce((sum, item) => {
-      return sum + item.product.price * item.quantity;
+      return sum + item.totalPrice;
     }, 0);
-    setTotalPrice(Math.round(sum * 100) / 100);
+    setTotalPrice(sum);
 
     const sumQuantity = items.reduce((sum, item) => {
       return sum + item.quantity;
@@ -43,7 +43,9 @@ function Cart() {
             </div>
           </div>
         )}
-        {items.length === 0 && <p>Jouw mandje is nog leeg...</p>}
+        {items.length === 0 && (
+          <p className="empty-msg">Jouw mandje is nog leeg...</p>
+        )}
         <Link href="/shop/checkout">
           <button className="btn btn-checkout">Checkout</button>
         </Link>

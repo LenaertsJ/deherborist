@@ -1,9 +1,6 @@
-import { useState } from "react";
 import Link from "next/link";
 
 function Shop() {
-  const [section, setSection] = useState("");
-
   return (
     <main className="container">
       <div className="inner-container shop">

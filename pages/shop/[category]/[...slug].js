@@ -32,7 +32,7 @@ function Product({ product }) {
 
 export async function getStaticProps(context) {
   const [id] = context.params.slug;
-  const data = await axios(`http://127.0.0.1:8000/api/products/${id}`);
+  const data = await axios(`products/${id}`);
   const product = data.data;
 
   return {
@@ -43,7 +43,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const response = await axios(`http://127.0.0.1:8000/api/products.json`);
+  const response = await axios(`products.json`);
   const products = await response.data;
 
   return {
@@ -54,7 +54,7 @@ export async function getStaticPaths() {
       },
     })),
     fallback: "blocking",
-    //add revalidate
+    // revalidate: 86400,
   };
 }
 

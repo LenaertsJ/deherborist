@@ -9,14 +9,6 @@ function ShopSection({ products }) {
   return (
     <main className="container">
       <div className="hero">
-        {/* {category === "infusies" ? (
-          <img className="shop-section-img" src="/images/lisa-hobbs.jpg" />
-        ) : (
-          <img
-            className="shop-section-img"
-            src="/images/micheile-henderson.jpeg"
-          ></img>
-        )} */}
         <div className="border-outer">
           <div className="border-inner">
             <h1 className="category">{category}</h1>
@@ -40,7 +32,7 @@ function ShopSection({ products }) {
 
 export async function getStaticProps(context) {
   const [category] = context.params.category;
-  const data = await axios(`products?category.name=${category}`);
+  const data = await axios(`products?category.name=${category}&stock[gt]=0`);
   const products = data.data["hydra:member"];
 
   return {
@@ -59,7 +51,7 @@ export async function getStaticPaths() {
       params: { category: category.name },
     })),
     fallback: "blocking",
-    //add revalidate
+    // revalidate: 86400,
   };
 }
 

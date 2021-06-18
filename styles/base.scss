@@ -100,7 +100,7 @@ a {
 //HOMEPAGE CONTENT
 #landingpage {
   width: 100%;
-  height: 93vh;
+  height: 94vh;
   background-image: url("../public/images/nikolett-harmat.jpeg");
   background-position: center;
   background-size: cover;
@@ -267,7 +267,7 @@ a {
   background-size: cover;
   background-position: center;
   position: relative;
-  min-height: 92vh;
+  min-height: 93vh;
   width: 50%;
   display: flex;
   align-items: center;
@@ -408,6 +408,9 @@ a {
   border: 1px solid black;
   padding: 30px;
   position: relative;
+  .empty-msg {
+    @include text-font;
+  }
   .cart-title {
     @include subtitle-font;
     text-align: center;
@@ -424,9 +427,8 @@ a {
 
   .cart-content {
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     height: 40vh;
-    // width: 90%;
     overflow: auto;
     &::-webkit-scrollbar {
       display: none;
@@ -448,6 +450,10 @@ a {
     margin-right: 8px;
     padding-right: 8px;
     border-right: solid 1px black;
+    display: flex;
+    p {
+      margin-right: 5px;
+    }
   }
   .cart-products {
     justify-content: space-between;
@@ -475,7 +481,7 @@ a {
     justify-content: flex-end;
     border-top: 1px solid black;
     padding-top: 15px;
-    margin-top: 50px;
+    margin-top: auto;
   }
 }
 

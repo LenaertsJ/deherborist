@@ -40,7 +40,8 @@ function ContentBox({plant}) {
               <div className="subtitle-container ">
                 <h2>symboliek</h2>
               </div>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui voluptatibus hic culpa vel ut voluptas ea expedita quod? Omnis ipsa tempora ex inventore voluptatum, molestias vero. Deleniti amet fuga magni ducimus dolore odit provident, deserunt libero cum rerum dolores reprehenderit, voluptates id. Doloremque recusandae nulla optio, ducimus sint ipsam pariatur numquam assumenda illum laboriosam magnam totam aspernatur, architecto suscipit qui quo tenetur laudantium deleniti vero iure sequi veniam. Eveniet repellat dicta saepe rerum, assumenda architecto labore ullam exercitationem itaque quod esse placeat sunt minus animi quia est cumque veniam eligendi rem enim iure beatae ipsam. Commodi alias tenetur consequuntur! Rerum.</p>
+              <div dangerouslySetInnerHTML={{__html:plant.symbolism}}></div>
+              {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui voluptatibus hic culpa vel ut voluptas ea expedita quod? Omnis ipsa tempora ex inventore voluptatum, molestias vero. Deleniti amet fuga magni ducimus dolore odit provident, deserunt libero cum rerum dolores reprehenderit, voluptates id. Doloremque recusandae nulla optio, ducimus sint ipsam pariatur numquam assumenda illum laboriosam magnam totam aspernatur, architecto suscipit qui quo tenetur laudantium deleniti vero iure sequi veniam. Eveniet repellat dicta saepe rerum, assumenda architecto labore ullam exercitationem itaque quod esse placeat sunt minus animi quia est cumque veniam eligendi rem enim iure beatae ipsam. Commodi alias tenetur consequuntur! Rerum.</p> */}
             </div>
           </div>
 

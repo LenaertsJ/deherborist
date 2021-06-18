@@ -8,19 +8,6 @@
     position: relative;
     &:hover {
       box-shadow: 0 0 15px 5px #d0d0d0;
-
-      // &:after {
-      //   content: "bekijk";
-      //   @include text-font;
-      //   text-transform: uppercase;
-      //   background-color: rgba(200, 206, 203, 0.904);
-      //   padding-top: 25px;
-      //   padding-bottom: 25px;
-      //   position: absolute;
-      //   top: 0px;
-      //   right: 0px;
-      //   left: 0px;
-      // }
     }
     .product-img {
       width: 100%;

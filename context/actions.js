@@ -22,13 +22,7 @@ export const removeItemFromCart = (product) => ({
 export const adjustQuantity = (product, quantity) => ({
   type: ADJUST_QUANTITY,
   payload: {
-    product: {
-      id: product.id,
-      name: product.name,
-      category: product.category,
-      price: product.price,
-      stock: product.stock,
-    },
+    product: product.id,
     quantity,
   },
 });

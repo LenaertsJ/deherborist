@@ -5,17 +5,11 @@ import { adjustQuantity, removeItemFromCart } from '../context/actions'
 
 function CartItem({product, quantity}) {
 
-    // const [count, setCount] = useState(quantity)
+    const [count, setCount] = useState(quantity)
     const { dispatch } = useContext(CartContext);
 
-    // const decrementCounter = () => setCount(count - 1)
-    // const incrementCounter = () => setCount(count + 1);
-
-    // useEffect(() => {
-    //     return () => {
-    //         dispatch(adjustQuantity(product, quantity))
-    //     }
-    // }, [count])
+    const decrementCounter = () => setCount(count - 1);
+    const incrementCounter = () => setCount(count + 1);
 
     return (
         <div className="cart-products flex">
@@ -24,12 +18,14 @@ function CartItem({product, quantity}) {
                 <p className="product-category">Type: {product.category}</p>
             </div>
             <div className="product-price flex">
-                <p className="quantity">Quantity: {quantity}</p>
-                {/* <div className="counter">
-                    <button className="btn quantity-btn" disabled={count === 1} onClick={decrementCounter}>-</button>
-                    <p>{ count }</p>
-                    <button className="btn quantity-btn" disabled={count === product.stock} onClick={incrementCounter}>+</button>
-                </div> */}
+                <div className="quantity">
+                    <p>Quantity: </p>
+                    <div className="counter">
+                        <button className="btn quantity-btn" disabled={count === 1} onClick={decrementCounter}>-</button>
+                        <p>{ count }</p>
+                        <button className="btn quantity-btn" disabled={count === product.stock} onClick={incrementCounter}>+</button>
+                    </div>
+                </div>
                 <p className="price">Prijs: {product.price} €</p>
                 <TiDeleteOutline className="icon" onClick={()=> dispatch(removeItemFromCart(product))}/>
             </div>

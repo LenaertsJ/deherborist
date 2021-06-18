@@ -1,10 +1,21 @@
 import CheckoutForm from "../../components/checkout-form";
 import { useContext } from "react";
 import { CartContext } from "../../context/cart";
+import { useEffect, useState } from "react";
 
 const SignupForm = () => {
   const { state: items } = useContext(CartContext);
-  console.log(items);
+
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    console.log(items);
+    setTotalPrice(
+      items.reduce((sum, item) => {
+        return sum + item.totalPrice;
+      }, 0)
+    );
+  }, [items]);
 
   return (
     <main className="container">
@@ -14,23 +25,23 @@ const SignupForm = () => {
             <h3>Je bestelling:</h3>
           </div>
 
-          <div class="checkout-wrapper">
-            {items.map((item) => (
-              <div className="text-container">
+          <ul className="checkout-wrapper">
+            {items.map((item, i) => (
+              <li key={i} className="text-container">
                 <p>{item.product.name}:</p>
-                <div class="text-container">
+                <div className="text-container">
                   <p>{item.quantity} x </p>
                   <p>{item.product.price} €</p>
                 </div>
-              </div>
+              </li>
             ))}
-            <div className="text-container total">
+            <li className="text-container total">
               <p>Totaal:</p>
-              <p>13 €</p>
-            </div>
-          </div>
+              <p>{totalPrice} €</p>
+            </li>
+          </ul>
         </div>
-        <CheckoutForm cart={items} />
+        <CheckoutForm items={items} totalPrice={totalPrice} />
       </div>
     </main>
   );

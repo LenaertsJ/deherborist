@@ -34,17 +34,15 @@ function CheckoutForm({items, totalPrice}) {
           url: 'addresses',
           method: "POST",
           data: {
+              "firstname" : values.firstname,
+              "lastname" : values.lastname,
+              "email" : values.email,
+              "phonenumber" : values.phonenumber,
               "street" : values.street,
               "houseNumber" : values.housenr,
               "postalCode" : values.postalCode,
               "city" : values.city,
               "country" : values.country,
-              "customers" : [
-                {"firstname" : values.firstname,
-                 "lastname" : values.lastname,
-                 "email" : values.email
-                }
-              ]
           } 
       })
       const data = await response.data;
@@ -65,7 +63,6 @@ function CheckoutForm({items, totalPrice}) {
           "address" : `api/addresses/${data.id}`,
           "totalPrice" : totalPrice,
           "totalItems" : items.length,
-          "customer" : `api/customers/${data.customers[0].id}`,
           "orderedProducts" : itemDetails
         }
       })
@@ -106,6 +103,10 @@ function CheckoutForm({items, totalPrice}) {
               <label htmlFor="email">Email</label>
               <Field name="email" type="email" className="form-input" />
               <ErrorMessage component="div" name="email" className="error-msg" />
+
+              <label htmlFor="phonenumber">Phonenumber</label>
+              <Field name="phonenumber" type="number" className="form-input" />
+              <ErrorMessage component="div" name="phonenumber" className="error-msg" />
 
               <div className="form-elements">
               <div className="address-wrapper">

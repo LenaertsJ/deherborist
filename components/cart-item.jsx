@@ -5,11 +5,15 @@ import { adjustQuantity, removeItemFromCart } from '../context/actions'
 
 function CartItem({product, quantity}) {
 
-    const [count, setCount] = useState(quantity)
+    // const [count, setCount] = useState(quantity)
     const { dispatch } = useContext(CartContext);
+    const options = [...new Array(product.stock)].map((v, index) => {
+        return (
+        <option key= {index} value={index + 1}>{index + 1}</option>
+    )});
 
-    const decrementCounter = () => setCount(count - 1);
-    const incrementCounter = () => setCount(count + 1);
+    // const decrementCounter = () => setCount(count - 1);
+    // const incrementCounter = () => setCount(count + 1);
 
     return (
         <div className="cart-products flex">
@@ -21,9 +25,12 @@ function CartItem({product, quantity}) {
                 <div className="quantity">
                     <p>Quantity: </p>
                     <div className="counter">
-                        <button className="btn quantity-btn" disabled={count === 1} onClick={decrementCounter}>-</button>
+                        <select name="quantity" onChange={(e) => dispatch(adjustQuantity(product, e.target.value))}>
+                            { options }
+                        </select>
+                        {/* <button className="btn quantity-btn" disabled={count === 1} onClick={decrementCounter}>-</button>
                         <p>{ count }</p>
-                        <button className="btn quantity-btn" disabled={count === product.stock} onClick={incrementCounter}>+</button>
+                        <button className="btn quantity-btn" disabled={count === product.stock} onClick={incrementCounter}>+</button> */}
                     </div>
                 </div>
                 <p className="price">Prijs: {product.price} €</p>

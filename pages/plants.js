@@ -42,10 +42,7 @@ function Plants() {
     setValue(e.target.value);
   };
 
-  /**
-   *
-   * refactor handleSubmit
-   */
+  //Todo: show message if search returns no results
 
   const handleSubmit = (e) => {
     e.preventDefault();

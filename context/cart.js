@@ -48,12 +48,14 @@ const reducer = (state, action) => {
 
     case ADJUST_QUANTITY:
       return state.map((cartItem) => {
-        cartItem.product.id === action.payload.product
-          ? {
-              ...cartItem,
-              quantity: Math.min(action.payload.quantity, product.stock),
-            }
-          : cartItem;
+        if (cartItem.product.id === action.payload.product) {
+          return {
+            ...cartItem,
+            quantity: Math.min(action.payload.quantity, action.payload.stock),
+          };
+        } else {
+          return cartItem;
+        }
       });
 
     case REMOVE_ITEM:

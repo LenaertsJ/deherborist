@@ -23,6 +23,7 @@ export const adjustQuantity = (product, quantity) => ({
   type: ADJUST_QUANTITY,
   payload: {
     product: product.id,
+    stock: product.stock,
     quantity,
   },
 });

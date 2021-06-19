@@ -1,4 +1,9 @@
-import { ADD_ITEM, REMOVE_ITEM, ADJUST_QUANTITY } from "./actionConstants";
+import {
+  ADD_ITEM,
+  REMOVE_ITEM,
+  ADJUST_QUANTITY,
+  EMPTY_CART,
+} from "./actionConstants";
 
 export const addItem = (product, quantity) => ({
   type: ADD_ITEM,
@@ -26,4 +31,9 @@ export const adjustQuantity = (product, quantity) => ({
     stock: product.stock,
     quantity,
   },
+});
+
+export const emptyCart = () => ({
+  type: EMPTY_CART,
+  payload: "",
 });

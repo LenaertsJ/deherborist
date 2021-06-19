@@ -1,5 +1,10 @@
 import { createContext } from "react";
-import { ADD_ITEM, REMOVE_ITEM, ADJUST_QUANTITY } from "./actionConstants";
+import {
+  ADD_ITEM,
+  REMOVE_ITEM,
+  ADJUST_QUANTITY,
+  EMPTY_CART,
+} from "./actionConstants";
 import createPersistedReducer from "use-persisted-reducer";
 
 const initialState = [];
@@ -60,6 +65,9 @@ const reducer = (state, action) => {
 
     case REMOVE_ITEM:
       return state.filter((cartItem) => cartItem.product.id !== action.payload);
+
+    case EMPTY_CART:
+      return (state = []);
 
     default:
       return state;

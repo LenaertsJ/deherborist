@@ -37,7 +37,7 @@ function CheckoutForm({items, totalPrice}) {
               "firstname" : values.firstname,
               "lastname" : values.lastname,
               "email" : values.email,
-              "phonenumber" : values.phonenumber,
+              "phonenumber" : values.phonenumber.toString(),
               "street" : values.street,
               "houseNumber" : values.housenr,
               "postalCode" : values.postalCode,
@@ -45,8 +45,9 @@ function CheckoutForm({items, totalPrice}) {
               "country" : values.country,
           } 
       })
+
       const data = await response.data;
-      console.log(data);
+      console.log(data.id);
       const itemDetails = items.map((item) => {
         return {
           "product" : `api/products/${item.product.id}`,
@@ -54,6 +55,9 @@ function CheckoutForm({items, totalPrice}) {
           "quantity" : item.quantity
         }
       })
+      console.log(itemDetails)
+      console.log(totalPrice)
+      console.log(items.length)
 
       // POST OF ORDER
       const responseOrder = await axios({

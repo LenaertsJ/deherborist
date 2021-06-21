@@ -8,6 +8,7 @@ function CheckoutForm({items, totalPrice}) {
     firstname: "",
     lastname: "",
     email: "",
+    phonenumber: "",
     street: "",
     housenr: "",
     postalCode: "",
@@ -20,6 +21,7 @@ function CheckoutForm({items, totalPrice}) {
     email: Yup.string()
       .email("Invalid email address")
       .required("Required"),
+    phonenumber: Yup.number().required("Required"),
     street: Yup.string().required("Required"),
     housenr: Yup.number().required("Required"),
     postalCode: Yup.number().required("Required"),
@@ -27,7 +29,9 @@ function CheckoutForm({items, totalPrice}) {
     country: Yup.string().required("Required"),
   })
 
-  const handleSubmit = (items, totalPrice) => async (values) => {
+  const handleSubmit = (items, totalPrice) => async (values, {setErrors, setStatus, resetForm}) => {
+
+    console.log(values)
 
     // POST OF CUSTOMER DETAILS
       const response = await axios({
@@ -47,7 +51,7 @@ function CheckoutForm({items, totalPrice}) {
       })
 
       const data = await response.data;
-      console.log(data.id);
+
       const itemDetails = items.map((item) => {
         return {
           "product" : `api/products/${item.product.id}`,
@@ -55,9 +59,6 @@ function CheckoutForm({items, totalPrice}) {
           "quantity" : item.quantity
         }
       })
-      console.log(itemDetails)
-      console.log(totalPrice)
-      console.log(items.length)
 
       // POST OF ORDER
       const responseOrder = await axios({
@@ -73,6 +74,9 @@ function CheckoutForm({items, totalPrice}) {
       const dataOrder = responseOrder.data;
       console.log(dataOrder);
   
+      setStatus({success: 'Jouw bestelling is geplaatst'})
+      resetForm({});
+      
   }
 
 
@@ -84,12 +88,13 @@ function CheckoutForm({items, totalPrice}) {
         validationSchema= { yupSchema }
         onSubmit={ handleSubmit(items, totalPrice) }
       >
-        {(props) => {
-          // console.log(props)
+        {({status}) => {
+          // console.log(props.status)
 
           return(
             <Form className="checkout-form">
 
+              <div>Success message here: {status ? status.success : ''}</div>
               <div className="form-elements">
               <div className="name-wrapper">
                 <label htmlFor="firstname">Voornaam</label>

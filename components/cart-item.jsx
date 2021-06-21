@@ -8,7 +8,7 @@ function CartItem({product, quantity}) {
     const { dispatch } = useContext(CartContext);
     const options = [...new Array(product.stock)].map((v, index) => {
         return (
-        <option key= {index} value={index + 1}>{index + 1}</option>
+        <option key= {index} value={index + 1} selected={quantity === (index + 1)}>{index + 1}</option>
     )});
 
     return (

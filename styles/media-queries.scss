@@ -3,13 +3,33 @@
 
 //15" SCREEN
 @media screen and (max-width: 1500px) {
+  #herbarium #herbarium-img {
+    width: 28%;
+  }
+  #herbarium #herbarium-title {
+    bottom: 35%;
+    left: 20%;
+  }
+  #plant-detail #detail-img {
+    width: 400px;
+  }
   .content-container {
     width: 45%;
+    .inner-content .text-container .subtitle-container .content-title {
+      font-size: 3rem;
+      bottom: 290px;
+    }
   }
 }
 
 //13" SCREEEN
 @media screen and (max-width: 1366px) {
+  #herbarium #herbarium-img {
+    width: 30%;
+  }
+  #herbarium #herbarium-title {
+    bottom: 250px;
+  }
   .content-container {
     width: 45%;
     .title-container {

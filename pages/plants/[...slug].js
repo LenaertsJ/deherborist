@@ -1,4 +1,4 @@
-import Contentbox from "../../components/plant-info";
+import PlantInfo from "../../components/plant-info";
 import axios from "../../axios";
 
 function PlantDetail({ plant }) {
@@ -9,7 +9,7 @@ function PlantDetail({ plant }) {
           <img src={plant.imageUrl} />
         </div>
         <div className="content-container">
-          <Contentbox plant={plant} />
+          <PlantInfo plant={plant} />
           <a href="#symbolism">
             <div className="arrow-container">
               <div className="arrow-tag">scroll</div>

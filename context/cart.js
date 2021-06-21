@@ -57,6 +57,9 @@ const reducer = (state, action) => {
           return {
             ...cartItem,
             quantity: Math.min(action.payload.quantity, action.payload.stock),
+            totalPrice: parseFloat(
+              (action.payload.quantity * cartItem.product.price).toFixed(2)
+            ),
           };
         } else {
           return cartItem;

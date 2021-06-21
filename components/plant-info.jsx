@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function ContentBox({plant}) {
 
+
+  useEffect(() =>  console.log(plant))
   const [content, setContent] = useState("medicinale eigenschappen")
 
     return (
@@ -15,7 +17,7 @@ function ContentBox({plant}) {
                 <ul>
                   <li>
                     <h4 className="subtitle-container">Rustgevend</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    <div dangerouslySetInnerHTML={{__html:plant.medicinalInfo}}></div>
                   </li>
                   {/* <li>
                     <h4 className="subtitle-container">Rustgevend</h4>

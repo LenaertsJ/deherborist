@@ -492,6 +492,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .succes-msg {
+    text-align: center;
+    margin: 9rem;
+    padding: 2rem;
+    @include subtitle-font;
+    color: $accent-pink;
+    border: 1px dashed $accent-yellow;
+  }
 
   .checkout-overview {
     @include text-font;
@@ -505,6 +513,10 @@ a {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      img {
+        width: 100px;
+        margin-left: auto;
+      }
     }
     .title-container {
       @include subtitle-font;

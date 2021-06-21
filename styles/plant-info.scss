@@ -37,16 +37,18 @@
     }
     .list-container {
       min-height: 500px;
-      margin-top: 50px;
+      margin-top: 20px;
       width: 100%;
     }
     .symboliek {
       min-height: 500px;
       margin-left: 23px;
+      margin-top: 50px;
       width: 100%;
       .subtitle-container {
         color: $accent-pink;
         text-transform: uppercase;
+        margin-bottom: 20px;
       }
     }
   }

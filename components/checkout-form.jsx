@@ -4,7 +4,7 @@ import axios from '../axios';
 import { useEffect } from 'react';
 import { emptyCart } from '../context/actions';
 
-function CheckoutForm({items, totalPrice, dispatch}) {
+function CheckoutForm({items, totalPrice, dispatch, setSuccess}) {
   
   // useEffect(()=> console.log(dispatch))
 
@@ -28,12 +28,12 @@ function CheckoutForm({items, totalPrice, dispatch}) {
     phonenumber: Yup.number().required("Required"),
     street: Yup.string().required("Required"),
     housenr: Yup.number().required("Required"),
-    postalCode: Yup.number().required("Required"),
+    postalCode: Yup.number().required("Required").moreThan(0),
     city: Yup.string().required("Required"),
     country: Yup.string().required("Required"),
   })
 
-  const handleSubmit = (items, totalPrice, dispatch) => async (values, {setErrors, setStatus, resetForm}) => {
+  const handleSubmit = (items, totalPrice, dispatch, setSuccess) => async (values, {setErrors, resetForm}) => {
 
     console.log(values)
 
@@ -78,7 +78,7 @@ function CheckoutForm({items, totalPrice, dispatch}) {
       const dataOrder = responseOrder.data;
       console.log(dataOrder);
   
-      setStatus({success: 'Bedankt, jouw bestelling is geplaatst.'})
+      setSuccess(true)
       resetForm({});
       dispatch(emptyCart())
       
@@ -89,18 +89,17 @@ function CheckoutForm({items, totalPrice, dispatch}) {
         <Formik
         items = { items }
         dispatch = { dispatch }
+        setSucces = { setSuccess }
         totalPrice = { totalPrice }
         initialValues={ initialValues }
         validationSchema= { yupSchema }
-        onSubmit={ handleSubmit(items, totalPrice, dispatch) }
+        onSubmit={ handleSubmit(items, totalPrice, dispatch, setSuccess) }
       >
         {({status}) => {
           // console.log(props.status)
 
           return(
             <Form className="checkout-form">
-
-              <div className="succes-msg">{status ? status.success : ''}</div>
               <div className="form-elements">
               <div className="name-wrapper">
                 <label htmlFor="firstname">Voornaam</label>
@@ -151,9 +150,14 @@ function CheckoutForm({items, totalPrice, dispatch}) {
                 </div>
               </div>
     
-              <label htmlFor="country">Land</label>
-              <Field name="country" type="text" className="form-input" />
-              <ErrorMessage component="div" name="country" className="error-msg" />
+              <div id="country" className="form-elements">
+                <label htmlFor="country">Land</label>
+                <Field as="select" name="country" type="text" defaultValue="België" className="form-input">
+                  <option>België</option>
+                  <option>Nederland</option>
+                </Field>
+                <ErrorMessage component="div" name="country" className="error-msg" />
+              </div>
     
               <button className="btn btn-order" type="submit">Submit</button>
             </Form>

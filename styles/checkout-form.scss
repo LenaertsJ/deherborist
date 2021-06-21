@@ -18,11 +18,15 @@
     margin-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    outline: none;
   }
-  .succes-msg {
-    margin-bottom: 10px;
-    @include subtitle-font;
-    color: $accent-pink;
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  #country {
+    display: block;
   }
   .form-elements {
     display: flex;
@@ -35,6 +39,12 @@
     }
     .number-wrapper {
       width: 15%;
+    }
+    select {
+      padding: 10px;
+      margin-top: 10px;
+      @include text-font;
+      outline: none;
     }
   }
   .error-msg {

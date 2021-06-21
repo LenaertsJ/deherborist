@@ -14,6 +14,9 @@ function Cart() {
     }, 0);
     setTotalPrice(sum);
 
+    console.log("verandering");
+    console.log(items);
+
     const sumQuantity = items.reduce((sum, item) => {
       return sum + item.quantity;
     }, 0);

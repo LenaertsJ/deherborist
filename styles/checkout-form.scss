@@ -19,6 +19,11 @@
     padding-left: 10px;
     padding-right: 10px;
   }
+  .succes-msg {
+    margin-bottom: 10px;
+    @include subtitle-font;
+    color: $accent-pink;
+  }
   .form-elements {
     display: flex;
     justify-content: space-between;

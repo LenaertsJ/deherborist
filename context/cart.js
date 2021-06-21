@@ -67,7 +67,7 @@ const reducer = (state, action) => {
       return state.filter((cartItem) => cartItem.product.id !== action.payload);
 
     case EMPTY_CART:
-      return (state = []);
+      return initialState;
 
     default:
       return state;

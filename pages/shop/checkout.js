@@ -4,12 +4,11 @@ import { CartContext } from "../../context/cart";
 import { useEffect, useState } from "react";
 
 const SignupForm = () => {
-  const { state: items } = useContext(CartContext);
+  const { state: items, dispatch } = useContext(CartContext);
 
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    console.log(items);
     setTotalPrice(
       items.reduce((sum, item) => {
         return sum + item.totalPrice;
@@ -41,7 +40,11 @@ const SignupForm = () => {
             </li>
           </ul>
         </div>
-        <CheckoutForm items={items} totalPrice={totalPrice} />
+        <CheckoutForm
+          items={items}
+          totalPrice={totalPrice}
+          dispatch={dispatch}
+        />
       </div>
     </main>
   );

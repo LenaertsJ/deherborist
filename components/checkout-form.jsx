@@ -1,9 +1,13 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from '../axios';
+import { useEffect } from 'react';
+import { emptyCart } from '../context/actions';
 
-function CheckoutForm({items, totalPrice}) {
+function CheckoutForm({items, totalPrice, dispatch}) {
   
+  // useEffect(()=> console.log(dispatch))
+
   const initialValues = {
     firstname: "",
     lastname: "",
@@ -29,7 +33,7 @@ function CheckoutForm({items, totalPrice}) {
     country: Yup.string().required("Required"),
   })
 
-  const handleSubmit = (items, totalPrice) => async (values, {setErrors, setStatus, resetForm}) => {
+  const handleSubmit = (items, totalPrice, dispatch) => async (values, {setErrors, setStatus, resetForm}) => {
 
     console.log(values)
 
@@ -74,8 +78,9 @@ function CheckoutForm({items, totalPrice}) {
       const dataOrder = responseOrder.data;
       console.log(dataOrder);
   
-      setStatus({success: 'Jouw bestelling is geplaatst'})
+      setStatus({success: 'Bedankt, jouw bestelling is geplaatst.'})
       resetForm({});
+      dispatch(emptyCart())
       
   }
 
@@ -83,10 +88,11 @@ function CheckoutForm({items, totalPrice}) {
     return (
         <Formik
         items = { items }
+        dispatch = { dispatch }
         totalPrice = { totalPrice }
         initialValues={ initialValues }
         validationSchema= { yupSchema }
-        onSubmit={ handleSubmit(items, totalPrice) }
+        onSubmit={ handleSubmit(items, totalPrice, dispatch) }
       >
         {({status}) => {
           // console.log(props.status)
@@ -94,7 +100,7 @@ function CheckoutForm({items, totalPrice}) {
           return(
             <Form className="checkout-form">
 
-              <div>Success message here: {status ? status.success : ''}</div>
+              <div className="succes-msg">{status ? status.success : ''}</div>
               <div className="form-elements">
               <div className="name-wrapper">
                 <label htmlFor="firstname">Voornaam</label>

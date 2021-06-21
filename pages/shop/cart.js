@@ -47,7 +47,10 @@ function Cart() {
           </div>
         )}
         {items.length === 0 && (
-          <p className="empty-msg">Jouw mandje is nog leeg...</p>
+          <div className="empty-cart">
+            <img src="/images/logo-herborist.svg" />
+            <p className="empty-msg">Jouw mandje is nog leeg...</p>
+          </div>
         )}
         <Link href="/shop/checkout">
           <button className="btn btn-checkout">Checkout</button>

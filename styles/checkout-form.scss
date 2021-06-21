@@ -11,7 +11,7 @@
   input {
     @include text-font;
     font-size: 1.5rem;
-    line-height: 2;
+    line-height: 1.5;
     display: block;
     width: 100%;
     margin-bottom: 10px;
@@ -31,6 +31,14 @@
   .form-elements {
     display: flex;
     justify-content: space-between;
+    .label-wrapper {
+      label {
+        margin-right: 1rem;
+      }
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
     .name-wrapper {
       width: 45%;
     }
@@ -51,7 +59,6 @@
     display: block;
     color: $accent-pink;
     font-size: 1.2rem;
-    margin-bottom: 20px;
   }
 
   .btn-order {
@@ -59,9 +66,8 @@
     padding: 10px;
     margin-top: 20px;
     &:hover {
-      background-color: $light-green;
-      border: none;
-      color: $title-color;
+      background-color: $grey;
+      color: $dark-green;
     }
   }
 }

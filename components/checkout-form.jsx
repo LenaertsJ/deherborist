@@ -102,61 +102,84 @@ function CheckoutForm({items, totalPrice, dispatch, setSuccess}) {
             <Form className="checkout-form">
               <div className="form-elements">
               <div className="name-wrapper">
-                <label htmlFor="firstname">Voornaam</label>
+                <div className="label-wrapper">
+                  <label htmlFor="firstname">Voornaam</label>
+                  <ErrorMessage component="div" name="firstname" className="error-msg" />
+                </div>
                 <Field name="firstname" type="text" className="form-input" />
-                <ErrorMessage component="div" name="firstname" className="error-msg" />
+                
               </div>
     
               <div className="name-wrapper">
-                <label htmlFor="lastname">Familienaam</label>
+                <div className="label-wrapper">
+                  <label htmlFor="lastname">Familienaam</label>
+                  <ErrorMessage component="div" name="lastname" className="error-msg" />
+                </div>
                 <Field name="lastname" type="text" className="form-input" />
-                <ErrorMessage component="div" name="lastname" className="error-msg" />
-              </div>
+                </div>
               </div>
 
-              <label htmlFor="email">Email</label>
-              <Field name="email" type="email" className="form-input" />
-              <ErrorMessage component="div" name="email" className="error-msg" />
+              <div className="name-wrapper">
+                <div className="label-wrapper">
+                  <label htmlFor="email">Email</label>
+                  <ErrorMessage component="div" name="email" className="error-msg" />
+                </div>
+                <Field name="email" type="email" className="form-input" />
+              </div>
+
 
               <label htmlFor="phonenumber">Phonenumber</label>
-              <Field name="phonenumber" type="number" className="form-input" />
+              <div className="label-wrapper">
               <ErrorMessage component="div" name="phonenumber" className="error-msg" />
+              </div>
+              <Field name="phonenumber" type="number" className="form-input" />
 
               <div className="form-elements">
               <div className="address-wrapper">
-                <label htmlFor="street">Straat</label>
+                <div className="label-wrapper">
+                  <label htmlFor="street">Straat</label>
+                  <ErrorMessage component="div" name="street" className="error-msg" />
+                </div>
                 <Field name="street" type="text" className="form-input" />
-                <ErrorMessage component="div" name="street" className="error-msg" />
               </div>
     
               <div className="number-wrapper">
-                <label htmlFor="housenr">Huisnummer</label>
+                <div className="label-wrapper">
+                  <label htmlFor="housenr">Huisnummer</label>
+                  <ErrorMessage component="div" name="housenr" className="error-msg" />
+                </div>
                 <Field name="housenr" type="number" className="form-input" />
-                <ErrorMessage component="div" name="housenr" className="error-msg" />
               </div>
               </div>
 
               <div className="form-elements">
                 <div className="number-wrapper">
-                  <label htmlFor="postalCode">Postcode</label>
+                  <div className="label-wrapper">
+                    <label htmlFor="postalCode">Postcode</label>
+                    <ErrorMessage component="div" name="postalCode" className="error-msg" />
+                  </div>
                   <Field name="postalCode" type="number" className="form-input" />
-                  <ErrorMessage component="div" name="postalCode" className="error-msg" />
                 </div>
 
                 <div className="address-wrapper">
-                  <label htmlFor="city">Stad</label>
+                  <div className="label-wrapper">
+                    <label htmlFor="city">Stad</label>
+                    <ErrorMessage component="div" name="city" className="error-msg" />
+                  </div>
                   <Field name="city" type="text" className="form-input" />
-                  <ErrorMessage component="div" name="city" className="error-msg" />
                 </div>
               </div>
     
               <div id="country" className="form-elements">
-                <label htmlFor="country">Land</label>
-                <Field as="select" name="country" type="text" defaultValue="België" className="form-input">
-                  <option>België</option>
-                  <option>Nederland</option>
+                <div className="label-wrapper">
+                  <label htmlFor="country">Land</label>
+                  <ErrorMessage component="div" name="country" className="error-msg" />
+                </div>
+                <Field as="select" name="country" type="text" className="form-input">
+                  <option disabled value="DEFAULT">-- land --</option>
+                  <option value="België">België</option>
+                  <option value="Nederland">Nederland</option>
                 </Field>
-                <ErrorMessage component="div" name="country" className="error-msg" />
               </div>
     
               <button className="btn btn-order" type="submit">Submit</button>

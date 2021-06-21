@@ -1,5 +1,5 @@
 import { TiDeleteOutline } from "react-icons/ti";
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { CartContext } from '../context/cart';
 import { adjustQuantity, removeItemFromCart, emptyCart } from '../context/actions'
 

@@ -408,16 +408,25 @@ a {
   border: 1px solid black;
   padding: 30px;
   position: relative;
-  .empty-msg {
-    @include text-font;
+  .empty-cart {
+    text-align: center;
+    // display: flex;
+    // align-items: center;
+    .empty-msg {
+      @include text-font;
+      margin-top: 3rem;
+      color: $accent-pink;
+    }
+    img {
+      width: 200px;
+    }
   }
   .cart-title {
     @include subtitle-font;
+    color: $dark-green;
     text-align: center;
     margin-bottom: 100px;
-    span {
-      text-transform: capitalize;
-    }
+    text-transform: uppercase;
   }
 
   .flex {
@@ -442,8 +451,8 @@ a {
     right: -1px;
     bottom: -60px;
     &:hover {
-      background-color: black;
-      color: white;
+      background-color: $grey;
+      color: $dark-green;
     }
   }
   .quantity {

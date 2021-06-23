@@ -4,6 +4,11 @@
   @include text-font;
   width: 35%;
   margin-right: 10%;
+  .checkout-title {
+    @include title-font;
+    color: $accent-yellow;
+    margin-bottom: 30px;
+  }
   label {
     display: block;
     font-weight: bold;
@@ -16,8 +21,8 @@
     width: 100%;
     margin-bottom: 10px;
     margin-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    // padding-left: 10px;
+    // padding-right: 10px;
     outline: none;
   }
   input::-webkit-outer-spin-button,

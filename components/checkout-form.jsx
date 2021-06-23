@@ -100,6 +100,7 @@ function CheckoutForm({items, totalPrice, dispatch, setSuccess}) {
 
           return(
             <Form className="checkout-form">
+              <h3 className="checkout-title">Plaats je bestelling</h3>
               <div className="form-elements">
               <div className="name-wrapper">
                 <div className="label-wrapper">
@@ -145,7 +146,7 @@ function CheckoutForm({items, totalPrice, dispatch, setSuccess}) {
     
               <div className="number-wrapper">
                 <div className="label-wrapper">
-                  <label htmlFor="housenr">Huisnummer</label>
+                  <label htmlFor="housenr">Nr</label>
                   <ErrorMessage component="div" name="housenr" className="error-msg" />
                 </div>
                 <Field name="housenr" type="number" className="form-input" />

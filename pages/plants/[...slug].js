@@ -1,11 +1,13 @@
 import PlantInfo from "../../components/plant-info";
 import axios from "../../axios";
+import { useEffect } from "react";
 
 function PlantDetail({ plant }) {
+  useEffect(() => console.log(plant));
   return (
     <main className="container">
       <div id="plant-detail" className="inner-container">
-        <div id="detail-img" class="image-container-vertical">
+        <div id="detail-img" className="image-container-vertical">
           <img src={plant.imageUrl} />
         </div>
         <div className="content-container">

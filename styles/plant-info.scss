@@ -51,5 +51,44 @@
         margin-bottom: 20px;
       }
     }
+    #products {
+      margin-left: 20px;
+      // margin-top: 50px;
+      width: 90%;
+      .subtitle-container {
+        color: $text-color;
+        text-transform: uppercase;
+      }
+      .text {
+        @include text-font;
+        margin-bottom: 20px;
+      }
+    }
+    .list {
+      list-style-type: none;
+      color: $dark-green;
+      padding-left: 0px;
+      a {
+        margin-bottom: 10px;
+        line-height: 1.5;
+        &:hover {
+          color: $accent-yellow;
+        }
+      }
+    }
+    .list-qualities {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid $dark-green;
+      padding: 5px;
+      margin-bottom: 20px;
+      li {
+        margin-right: 10px;
+        color: $text-color;
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+    }
   }
 }

@@ -5,15 +5,8 @@
 *BIG LAPTOP SCREEN
 ********************************/
 @media screen and (max-width: 1500px) {
-  //***HERBARIUM****//
+  //***PLANT DETAIL****//
 
-  #herbarium #herbarium-img {
-    width: 28%;
-  }
-  #herbarium #herbarium-title {
-    bottom: 35%;
-    left: 20%;
-  }
   #plant-detail #detail-img {
     width: 400px;
   }
@@ -33,11 +26,14 @@
 @media screen and (max-width: 1366px) {
   //***HERBARIUM****//
 
-  #herbarium #herbarium-img {
-    width: 31%;
-  }
   #herbarium #herbarium-title {
+    font-size: 9rem;
     bottom: 250px;
+    left: 54%;
+    transform: rotate(0deg);
+  }
+  #herbarium .search-container {
+    width: 39%;
   }
   .content-container {
     width: 45%;
@@ -58,6 +54,44 @@
 }
 
 /***
+* IN BETWEEN SIZE
+********************************/
+
+@media screen and (max-width: 1130px) {
+  #herbarium #herbarium-img {
+    width: 400px;
+  }
+  #herbarium #herbarium-title {
+    font-size: 8rem;
+    bottom: 300px;
+    left: 54%;
+    transform: rotate(0deg);
+  }
+
+  #herbarium .search-container {
+    bottom: 130px;
+  }
+
+  //***PRODUCT DETAIL****//
+  .product-detail-inner {
+    .right-section {
+      width: 60%;
+    }
+  }
+}
+
+/***
+* IN BETWEEN SIZE
+********************************/
+
+@media screen and (max-width: 1000px) {
+  #herbarium #herbarium-title {
+    left: 500px;
+    font-size: 9rem;
+  }
+}
+
+/***
 *SMALL SCREEN
 ********************************/
 @media screen and (max-width: 900px) {
@@ -70,16 +104,27 @@
 
   //***HERBARIUM****//
   .container .inner-container {
-    align-items: flex-start;
+    display: block;
   }
 
   #herbarium #herbarium-title {
-    left: 39%;
-    transform: rotate(0deg);
-    font-size: 9rem;
+    position: static;
+    margin-left: 20px;
+    font-size: 8rem;
+    margin-top: 50px;
   }
   #herbarium .search-container {
     width: 45%;
+    position: static;
+    margin-left: 20px;
+  }
+  #herbarium .result-list {
+    right: 80px;
+  }
+
+  //***SHOP CATEGORIES****//
+  .section-shop {
+    width: 101%;
   }
 }
 
@@ -100,26 +145,15 @@
   }
 
   //***HERBARIUM****//
-  #herbarium #herbarium-title {
-    left: 43%;
-    bottom: 250px;
-    font-size: 8rem;
-  }
   #herbarium #herbarium-img {
     width: 45%;
   }
 
-  #herbarium .result-list {
-    right: 30%;
-  }
-
   #herbarium .search-container {
-    width: 54%;
-    right: 50px;
-    bottom: 115px;
+    margin-top: 100px;
   }
 
-  //PLANT DETAILS
+  //***PLANT DETAIL****//
   .container .inner-container {
     display: block;
   }
@@ -142,10 +176,6 @@
     }
   }
 
-  //***SHOP CATEGORIES****//
-  .section-shop {
-    width: 101%;
-  }
   //***PRODUCT DETAIL****//
   .product-detail-inner {
     display: block;
@@ -176,6 +206,20 @@
         margin-bottom: 30px;
       }
     }
+  }
+}
+
+/***
+* IN BETWEEN SIZE
+********************************/
+
+@media screen and (max-width: 660px) {
+  #herbarium .result-list {
+    position: static;
+    margin-bottom: 50px;
+  }
+  #herbarium .search-container {
+    width: 72%;
   }
 }
 
@@ -221,8 +265,8 @@
     display: block;
   }
   #herbarium #herbarium-title {
-    position: static;
-    font-size: 7rem;
+    font-size: 6rem;
+    margin-left: 10px;
     margin-top: 20px;
     text-align: center;
   }
@@ -234,15 +278,55 @@
   #herbarium .result-list {
     margin: 0 auto;
     position: static;
-    height: 150px;
-    overflow-y: auto;
   }
   #herbarium .search-container {
     width: 90%;
-    margin: 60px auto;
+    margin: 100px auto;
     margin-bottom: 60px;
     position: static;
   }
+
+  //***PLANT DETAIL****//
+
+  #plant-detail
+    .content-container
+    .inner-container
+    .text-container
+    .subtitle-container {
+    width: 100%;
+  }
+
+  #plant-detail
+    .content-container
+    .inner-container
+    .text-container
+    .subtitle-container
+    .content-title {
+    position: static;
+    transform: rotate(0deg);
+  }
+
+  #plant-detail .inner-content .text-container .flex {
+    display: block;
+  }
+
+  .inner-content .text-container .list-container {
+    margin-left: 20px;
+  }
+
+  #plant-detail
+    .inner-content
+    .text-container
+    .subtitle-container
+    .content-title {
+    margin-left: 20px;
+    font-size: 2rem;
+  }
+
+  #plant-detail .content-container .arrow-container {
+    right: 13px;
+  }
+
   //***SHOP****//
   .items-wrapper {
     @include make-col(1, 70px);
@@ -284,17 +368,5 @@
   }
   .inner-cart .cart-totals {
     margin-top: 50px;
-  }
-}
-
-/***
-*IN BETWEEN SIZES
-********************************/
-
-@media screen and (max-width: 1000px) {
-  #herbarium #herbarium-title {
-    left: 21%;
-    // transform: rotate(0deg);
-    font-size: 9rem;
   }
 }

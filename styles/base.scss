@@ -148,7 +148,7 @@ a {
     font-size: 11rem;
     height: 120px;
     position: absolute;
-    bottom: 210px;
+    bottom: 260px;
     left: 350px;
   }
   .result-list {
@@ -162,7 +162,7 @@ a {
 //PLANT DETAIL
 #plant-detail {
   #detail-img {
-    width: 500px;
+    width: 400px;
     margin-left: 80px;
   }
   .content-container {
@@ -377,6 +377,7 @@ a {
     background-color: $white;
     .product-detail-img {
       width: 500px;
+      text-align: center;
       img {
         width: 70%;
         object-fit: contain;

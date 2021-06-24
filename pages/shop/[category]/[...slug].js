@@ -1,4 +1,4 @@
-import { BsFillGrid1X2Fill } from "react-icons/bs";
+import { CgArrowLongLeft } from "react-icons/cg";
 
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
@@ -19,8 +19,9 @@ function Product({ product }) {
         </div>
         <div className="right-section">
           <div className="nav-box">
-            <a onClick={() => router.back()}>
-              <BsFillGrid1X2Fill className="icon" />
+            <a className="link-back" onClick={() => router.back()}>
+              <CgArrowLongLeft className="icon" />
+              <p>go back</p>
             </a>
           </div>
           <ProductDetail product={product} />
@@ -39,6 +40,7 @@ export async function getStaticProps(context) {
     props: {
       product,
     },
+    revalidate: 86400,
   };
 }
 
@@ -54,7 +56,6 @@ export async function getStaticPaths() {
       },
     })),
     fallback: "blocking",
-    // revalidate: 86400,
   };
 }
 

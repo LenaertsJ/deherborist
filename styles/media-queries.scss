@@ -130,6 +130,18 @@
     right: 80px;
   }
 
+  //***PLANT DETAIL****//
+  .container .inner-container {
+    display: block;
+  }
+  #plant-detail #detail-img {
+    width: 80%;
+    margin: 30px auto;
+  }
+  #plant-detail .content-container {
+    width: 80%;
+    margin: 30px auto;
+  }
   //***SHOP CATEGORIES****//
   .section-shop {
     width: 101%;
@@ -162,17 +174,17 @@
   }
 
   //***PLANT DETAIL****//
-  .container .inner-container {
-    display: block;
-  }
-  #plant-detail #detail-img {
-    width: 80%;
-    margin: 30px auto;
-  }
-  #plant-detail .content-container {
-    width: 80%;
-    margin: 30px auto;
-  }
+  // .container .inner-container {
+  //   display: block;
+  // }
+  // #plant-detail #detail-img {
+  //   width: 80%;
+  //   margin: 30px auto;
+  // }
+  // #plant-detail .content-container {
+  //   width: 80%;
+  //   margin: 30px auto;
+  // }
 
   .inner-content {
     font-size: 1rem;
@@ -228,6 +240,22 @@
   }
   #herbarium .search-container {
     width: 72%;
+  }
+
+  #plant-detail .inner-content .text-container .flex {
+    display: block;
+  }
+
+  #plant-detail
+    .inner-content
+    .text-container
+    .subtitle-container
+    .content-title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    width: 590px;
+    transform: rotate(0deg);
+    position: static;
   }
 }
 

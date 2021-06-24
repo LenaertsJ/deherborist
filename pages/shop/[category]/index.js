@@ -1,6 +1,8 @@
 import ProductCard from "../../../components/product-card";
 import axios from "../../../axios";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import { CgArrowLongLeft } from "react-icons/cg";
 
 function ShopSection({ products }) {
   const router = useRouter();
@@ -14,6 +16,18 @@ function ShopSection({ products }) {
             <h1 className="category">{category}</h1>
           </div>
         </div>
+      </div>
+      <div className="link-category">
+        <CgArrowLongLeft className="icon-small" />
+        {category === "infusies" ? (
+          <Link href="/shop/bloemenkunst">
+            <a>bloemenkunst</a>
+          </Link>
+        ) : (
+          <Link href="/shop/infusies">
+            <a>infusies</a>
+          </Link>
+        )}
       </div>
       <div className="shop-overview">
         <div className="items-wrapper">
@@ -39,6 +53,7 @@ export async function getStaticProps(context) {
     props: {
       products,
     },
+    revalidate: 86400,
   };
 }
 
@@ -51,7 +66,6 @@ export async function getStaticPaths() {
       params: { category: category.name },
     })),
     fallback: "blocking",
-    // revalidate: 86400,
   };
 }
 

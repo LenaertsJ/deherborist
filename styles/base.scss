@@ -26,16 +26,26 @@ body {
   // IMAGE CONTAINERS
   .image-container-vertical {
     width: 35%;
+    overflow: hidden;
     img {
       width: 100%;
       object-fit: contain;
+      transition: transform 0.5s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
   .image-container-horizontal {
     width: 50%;
+    overflow: hidden;
     img {
       width: 100%;
       object-fit: contain;
+      transition: transform 0.5s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
   .inner-container {
@@ -89,6 +99,14 @@ a {
   text-decoration: none;
   color: black;
   cursor: pointer;
+}
+
+.link-back {
+  display: flex;
+  align-items: center;
+  .icon {
+    margin-right: 10px;
+  }
 }
 
 //COUNTER STYLING (CART AND PRODUCT DETAIL)
@@ -161,6 +179,7 @@ a {
 
 //PLANT DETAIL
 #plant-detail {
+  justify-content: space-around;
   #detail-img {
     width: 400px;
     margin-left: 80px;
@@ -312,11 +331,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  // .shop-section-img {
-  //   width: 50%;
-  //   display: block;
-  //   margin: 0 auto;
-  // }
   &:after {
     content: "";
     position: absolute;
@@ -353,9 +367,32 @@ a {
   }
 }
 
+.link-category {
+  .icon-small {
+    margin-right: 10px;
+    color: $accent-pink;
+    transform: rotate(180deg);
+  }
+  .text-link {
+    text-transform: lowercase;
+  }
+  padding-right: 5%;
+  @include text-font;
+  margin-top: 70px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: flex-end;
+  a {
+    color: $accent-pink;
+    &:hover {
+      color: $accent-yellow;
+    }
+  }
+}
+
 .shop-overview {
   padding: 5%;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 .items-wrapper {
   width: 80%;

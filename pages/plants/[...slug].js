@@ -38,6 +38,7 @@ export async function getStaticProps(context) {
     props: {
       plant,
     },
+    revalidate: 86400,
   };
 }
 
@@ -50,7 +51,6 @@ export async function getStaticPaths() {
       params: { slug: [plant.id.toString(), plant.name] },
     })),
     fallback: "blocking",
-    // revalidate: 86400,
   };
 }
 

@@ -5,10 +5,18 @@
 *BIG LAPTOP SCREEN
 ********************************/
 @media screen and (max-width: 1500px) {
-  //***PLANT DETAIL****//
+  //***HERBARIUM****//
 
-  #plant-detail #detail-img {
+  #herbarium #herbarium-img {
     width: 400px;
+  }
+  #herbarium #herbarium-title {
+    bottom: 225px;
+  }
+
+  //***PLANT DETAIL****//
+  #plant-detail #detail-img {
+    width: 350px;
   }
   .content-container {
     width: 45%;

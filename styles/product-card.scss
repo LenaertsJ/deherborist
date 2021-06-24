@@ -20,13 +20,22 @@
     }
     .info-container {
       padding: 20px;
+      height: 80px;
+      position: relative;
       .product-title {
         @include menu-font;
         color: $subtitle-color;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
       }
       p {
         @include text-font;
+        background-color: $grey;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        position: absolute;
+        bottom: 30px;
+        left: 0px;
+        width: 100%;
       }
     }
   }

@@ -4,6 +4,9 @@ import { useEffect } from "react";
 
 function PlantDetail({ plant }) {
   useEffect(() => console.log(plant));
+
+  const handleScrollClick = () => {};
+
   return (
     <main className="container">
       <div id="plant-detail" className="inner-container">
@@ -13,7 +16,7 @@ function PlantDetail({ plant }) {
         <div className="content-container">
           <PlantInfo plant={plant} />
           <a href="#symbolism">
-            <div className="arrow-container">
+            <div className="arrow-container" onClick={handleScrollClick}>
               <div className="arrow-tag">scroll</div>
               <div className="arm left-arm"></div>
               <div className="arm right-arm"></div>

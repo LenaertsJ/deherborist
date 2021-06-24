@@ -17,8 +17,8 @@ export default function Home() {
               <h2>de kracht van planten</h2>
             </div>
             <p className="text-container">
-              Lorem ipsum dolor sit amet, consectetur adipis.Lorem ipsum dolor
-              sit amet, consectetur adipis Lorem ipsum dolor sit amet,
+              Lorem ipsum dolor sit amet, bla consectetur adipis.Lorem ipsum
+              dolor sit amet, consectetur adipis Lorem ipsum dolor sit amet,
               consectetur adipis Lorem ipsum dolor sit amet, consectetur adipis
               Lorem ipsum dolor sit amet, consectetur adipis Lorem ipsum dolor
               sit amet, consectetur adipis. Lorem ipsum dolor sit amet,

@@ -50,7 +50,7 @@ const SignupForm = () => {
               {items.length === 0 && (
                 <>
                   <div className="msg">Je mandje is nog leeg...</div>
-                  <img src="/images/logo-herborist.svg" />
+                  <img src="/images/logo-herborist.svg" alt="logo" />
                 </>
               )}
             </ul>

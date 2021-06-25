@@ -14,7 +14,7 @@ function Product({ product }) {
       <div className="product-detail-inner">
         <div className="left-section">
           <div className="product-detail-img">
-            <img src={product.imageUrl} />
+            <img src={product.imageUrl} alt={product.name} />
           </div>
         </div>
         <div className="right-section">

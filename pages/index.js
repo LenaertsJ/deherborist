@@ -10,7 +10,7 @@ export default function Home() {
       <div id="about">
         <div className="overview-section">
           <div className="image-container-vertical">
-            <img src="/images/bundo-kim.jpeg" />
+            <img src="/images/bundo-kim.jpeg" alt="infusies" />
           </div>
           <div className="content-container">
             <div className="title-container">
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
         <div className="overview-section">
           <div className="image-container-horizontal">
-            <img src="/images/micheile-henderson.jpeg" />
+            <img src="/images/micheile-henderson.jpeg" alt="bloemenkunst" />
           </div>
           <div className="content-container">
             <div className="title-container">

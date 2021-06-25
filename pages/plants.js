@@ -65,7 +65,7 @@ function Plants() {
     <main className="container">
       <div id="herbarium" className="inner-container">
         <div id="herbarium-img" className="image-container-vertical">
-          <img src="/images/nathan-dumlao.jpeg" />
+          <img src="/images/nathan-dumlao.jpeg" alt="herbarium" />
         </div>
         <h2 id="herbarium-title">herbarium</h2>
         {result.length > 0 && <ResultList result={result} />}

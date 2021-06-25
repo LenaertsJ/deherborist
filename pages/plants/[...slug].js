@@ -11,7 +11,7 @@ function PlantDetail({ plant }) {
     <main className="container">
       <div id="plant-detail" className="inner-container">
         <div id="detail-img" className="image-container-vertical">
-          <img src={plant.imageUrl} />
+          <img src={plant.imageUrl} alt={plant.name} />
         </div>
         <div className="content-container">
           <PlantInfo plant={plant} />

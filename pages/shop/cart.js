@@ -49,7 +49,7 @@ function Cart() {
         )}
         {items.length === 0 && (
           <div className="empty-cart">
-            <img src="/images/logo-herborist.svg" />
+            <img src="/images/logo-herborist.svg" alt="logo" />
             <p className="empty-msg">Jouw mandje is nog leeg...</p>
           </div>
         )}

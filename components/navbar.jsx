@@ -21,7 +21,7 @@ function Navbar() {
         <div className="nav-container">
             <Link href="/"><a className="main-title">De Herborist</a></Link>
             <div className="logo">
-                <img src="/images/logo-herborist.svg"></img>
+                <img src="/images/logo-herborist.svg" alt="logo"></img>
             </div>
             <div className="full-menu">
                 <div className="menu-section">

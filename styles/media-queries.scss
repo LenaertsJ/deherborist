@@ -1,6 +1,12 @@
 @import "./variables";
 @import "./mixins";
 
+@media screen and (max-width: 1600px) {
+  .container .image-container-horizontal {
+    width: 44%;
+  }
+}
+
 /***
 *BIG LAPTOP SCREEN
 ********************************/
@@ -104,7 +110,7 @@
 ********************************/
 @media screen and (max-width: 900px) {
   .content-container {
-    width: 50%;
+    width: 40%;
   }
   .items-wrapper {
     @include make-col(2, 70px);
@@ -159,13 +165,22 @@
     width: 80%;
   }
   .overview-section {
-    width: 90%;
+    width: 95%;
     padding-left: 3%;
     padding-right: 3%;
   }
+  .container .image-container-horizontal {
+    width: 500px;
+  }
+  .container .image-container-vertical {
+    width: 500px;
+  }
   .container .content-container .title-container {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 30px;
+  }
+  .container .content-container .text-container {
+    font-size: 1.3rem;
   }
 
   //***HERBARIUM****//
@@ -300,6 +315,13 @@
   .container .content-container .title-container {
     font-size: 1.5rem;
     margin-top: 30px;
+  }
+
+  .container .image-container-horizontal {
+    width: 250px;
+  }
+  .container .image-container-vertical {
+    width: 250px;
   }
 
   //***HERBARIUM****//

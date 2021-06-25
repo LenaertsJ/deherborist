@@ -34,7 +34,7 @@ export default function Home() {
         </div>
         <div className="overview-section">
           <div className="image-container-horizontal">
-            <img src="/images/pressed_flower.jpg" />
+            <img src="/images/micheile-henderson.jpeg" />
           </div>
           <div className="content-container">
             <div className="title-container">

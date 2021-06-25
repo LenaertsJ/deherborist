@@ -6,14 +6,22 @@
   justify-content: space-between;
   padding-left: 50px;
   padding-right: 50px;
-  padding-bottom: 100px;
-  padding-top: 100px;
+  padding-bottom: 50px;
+  padding-top: 50px;
   @include text-font;
   font-size: 1.3rem;
   .footer-text {
+    // position: relative;
     .footer-title {
       font-size: 2rem;
       font-weight: 400;
     }
+    // &:after {
+    //   content: "";
+    //   width: 200px;
+    //   height: 50px;
+    //   background-color: $accent-yellow;
+    //   position: absolute;
+    // }
   }
 }

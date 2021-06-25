@@ -277,6 +277,10 @@
   //   outline: solid #f00 1px !important;
   // }
 
+  .container {
+    min-height: 186vh;
+  }
+
   //***NAVBAR****//
   .nav-container {
     justify-content: flex-start;
@@ -346,7 +350,7 @@
   #herbarium .search-container {
     width: 90%;
     margin: 100px auto;
-    margin-bottom: 60px;
+    margin-top: 300px;
     position: static;
   }
 
@@ -432,5 +436,9 @@
   }
   .inner-cart .cart-totals {
     margin-top: 50px;
+  }
+
+  .footer-container {
+    padding: 0;
   }
 }

@@ -11,14 +11,14 @@
   .main-title {
     padding-left: 20px;
     width: fit-content;
-    @include title-font;
+    font-family: "Bad Script";
+    font-size: 3.5rem;
   }
   .full-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-right: 10px;
-    // display: none;
     .cart-quantity {
       margin-right: 10px;
     }
@@ -29,10 +29,10 @@
       text-transform: uppercase;
       margin-right: 10px;
       @include subtitle-font;
-      font-size: 20px;
+      font-size: 1.6rem;
       &:hover {
         color: $accent-yellow;
-        border-bottom: 2px solid $dark-green;
+        border-bottom: 1px solid $dark-green;
         transition: 0.5s;
       }
     }
@@ -40,7 +40,6 @@
       @include text-font;
       border-left: 1px solid $text-color;
       border-right: 1px solid $text-color;
-      // border-radius: 50px;
       padding: 5px;
     }
   }

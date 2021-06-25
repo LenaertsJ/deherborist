@@ -11,17 +11,20 @@
   @include text-font;
   font-size: 1.3rem;
   .footer-text {
-    // position: relative;
+    position: relative;
     .footer-title {
       font-size: 2rem;
       font-weight: 400;
     }
-    // &:after {
-    //   content: "";
-    //   width: 200px;
-    //   height: 50px;
-    //   background-color: $accent-yellow;
-    //   position: absolute;
-    // }
+    &:after {
+      content: "";
+      width: 200px;
+      height: 18px;
+      background-color: $light-orange;
+      bottom: 0px;
+      left: -3px;
+      position: absolute;
+      z-index: -1;
+    }
   }
 }

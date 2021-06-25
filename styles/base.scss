@@ -370,7 +370,7 @@ a {
 .link-category {
   .icon-small {
     margin-right: 10px;
-    color: $accent-pink;
+    color: black;
     transform: rotate(180deg);
   }
   .text-link {
@@ -383,7 +383,7 @@ a {
   display: flex;
   justify-content: flex-end;
   a {
-    color: $accent-pink;
+    color: black;
     &:hover {
       color: $accent-yellow;
     }

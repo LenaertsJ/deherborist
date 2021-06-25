@@ -1,4 +1,5 @@
 import Navbar from "./navbar"
+import Footer from './footer'
 import Head from "next/head";
 
 function Layout({ children }) {
@@ -12,7 +13,7 @@ function Layout({ children }) {
 
             <Navbar />
             { children }
-
+            <Footer />
         </>
     )
 }

@@ -17,15 +17,18 @@ export default function Home() {
               <h2>de kracht van planten</h2>
             </div>
             <p className="text-container">
-              Lorem ipsum dolor sit amet, bla consectetur adipis.Lorem ipsum
-              dolor sit amet, consectetur adipis Lorem ipsum dolor sit amet,
-              consectetur adipis Lorem ipsum dolor sit amet, consectetur adipis
-              Lorem ipsum dolor sit amet, consectetur adipis Lorem ipsum dolor
-              sit amet, consectetur adipis. Lorem ipsum dolor sit amet,
-              consectetur adip Lorem ipsum dolor sit amet, consectetur adipis
-              Lorem ipsum dolor sit amet, consectetur adipis Lorem ipsum dolor
-              sit amet, consectetur adipis Lorem ipsum dolor sit amet,
-              consectetur adipis.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+              eius quidem, voluptas quia nesciunt deserunt, maxime, asperiores
+              similique vitae atque quas. Illo suscipit distinctio magnam esse
+              et accusantium labore, hic maxime exercitationem ut repellendus
+              est quas eum ullam nulla ea nesciunt eaque, tempora obcaecati! Non
+              praesentium fugiat similique, dicta quam, et, hic qui voluptatum
+              modi omnis dolor nisi? Dolore nobis blanditiis distinctio
+              repellendus esse ullam exercitationem nostrum ad pariatur
+              consequuntur voluptate aperiam, maiores culpa itaque ipsum nam
+              minima cupiditate repellat, dolor asperiores commodi hic eveniet
+              ipsa facilis. Id nostrum expedita ipsum cumque laboriosam
+              voluptas? Libero aspernatur saepe est magni voluptas!
             </p>
           </div>
         </div>
@@ -38,15 +41,18 @@ export default function Home() {
               <h2>Kruidenthee en bloemenkunst</h2>
             </div>
             <p className="text-container">
-              Lorem ipsum dolor sit amet, consectetur adipis.Lorem ipsum dolor
-              sit amet, consectetur adipis Lorem ipsum dolor sit amet,
-              consectetur adipis Lorem ipsum dolor sit amet, consectetur adipis
-              Lorem ipsum dolor sit amet, consectetur adipis Lorem ipsum dolor
-              sit amet, consectetur adipis. Lorem ipsum dolor sit amet,
-              consectetur adip Lorem ipsum dolor sit amet, consectetur adipis
-              Lorem ipsum dolor sit amet, consectetur adipis Lorem ipsum dolor
-              sit amet, consectetur adipis Lorem ipsum dolor sit amet,
-              consectetur adipis.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+              eius quidem, voluptas quia nesciunt deserunt, maxime, asperiores
+              similique vitae atque quas. Illo suscipit distinctio magnam esse
+              et accusantium labore, hic maxime exercitationem ut repellendus
+              est quas eum ullam nulla ea nesciunt eaque, tempora obcaecati! Non
+              praesentium fugiat similique, dicta quam, et, hic qui voluptatum
+              modi omnis dolor nisi? Dolore nobis blanditiis distinctio
+              repellendus esse ullam exercitationem nostrum ad pariatur
+              consequuntur voluptate aperiam, maiores culpa itaque ipsum nam
+              minima cupiditate repellat, dolor asperiores commodi hic eveniet
+              ipsa facilis. Id nostrum expedita ipsum cumque laboriosam
+              voluptas? Libero aspernatur saepe est magni voluptas!
             </p>
           </div>
         </div>

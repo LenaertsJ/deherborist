@@ -12,6 +12,7 @@ import "../styles/plant-info.scss";
 import "../styles/product-card.scss";
 import "../styles/product-detail.scss";
 import "../styles/checkout-form.scss";
+import "../styles/footer.scss";
 
 function MyApp({ Component, pageProps }) {
   return (

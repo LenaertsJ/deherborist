@@ -14,6 +14,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
+    "react-mt-svg-lines": "^0.9.1",
     "sass": "^1.32.13",
     "slugify": "^1.5.3",
     "use-persisted-reducer": "^2.1.0",

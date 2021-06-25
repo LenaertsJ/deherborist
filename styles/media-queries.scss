@@ -127,7 +127,7 @@
     margin-left: 20px;
   }
   #herbarium .result-list {
-    right: 80px;
+    right: 220px;
   }
 
   //***PLANT DETAIL****//
@@ -163,6 +163,10 @@
     padding-left: 3%;
     padding-right: 3%;
   }
+  .container .content-container .title-container {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
 
   //***HERBARIUM****//
   #herbarium #herbarium-img {
@@ -174,17 +178,6 @@
   }
 
   //***PLANT DETAIL****//
-  // .container .inner-container {
-  //   display: block;
-  // }
-  // #plant-detail #detail-img {
-  //   width: 80%;
-  //   margin: 30px auto;
-  // }
-  // #plant-detail .content-container {
-  //   width: 80%;
-  //   margin: 30px auto;
-  // }
 
   .inner-content {
     font-size: 1rem;
@@ -272,6 +265,8 @@
   //***NAVBAR****//
   .nav-container {
     justify-content: flex-start;
+    padding-top: 5px;
+    padding-bottom: 5px;
     .main-title {
       font-size: 2rem !important;
     }
@@ -290,10 +285,21 @@
   }
 
   //***HOMEPAGE****//
-  .quote-text {
-    font-size: 2rem;
-    bottom: 90px;
-    width: 60%;
+  #landingpage .quote-text {
+    bottom: 148px;
+    right: 34px;
+  }
+
+  #about .overview-section {
+    display: block;
+  }
+  .container .content-container {
+    width: 100%;
+    margin-left: 0;
+  }
+  .container .content-container .title-container {
+    font-size: 1.5rem;
+    margin-top: 30px;
   }
 
   //***HERBARIUM****//

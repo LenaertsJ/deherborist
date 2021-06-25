@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import CartItem from "../../components/cart-item";
 import { CartContext } from "../../context/cart";
 import Link from "next/link";
+import SvgLines from "react-mt-svg-lines";
 
 function Cart() {
   const { state: items } = useContext(CartContext);

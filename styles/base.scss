@@ -489,8 +489,9 @@ a {
     right: -1px;
     bottom: -60px;
     &:hover {
-      background-color: $grey;
-      color: $dark-green;
+      background-color: $accent-pink;
+      color: white;
+      border: 1px solid white;
     }
   }
   .quantity {

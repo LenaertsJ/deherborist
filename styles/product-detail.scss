@@ -4,6 +4,8 @@
   overflow: auto;
   padding: 60px;
   @include text-font;
+  line-height: 1.5;
+  font-size: 1.5rem;
   .product-title {
     line-height: 1.5;
     text-transform: uppercase;
@@ -14,8 +16,8 @@
     margin-bottom: 15px;
   }
   .stock-msg {
-    color: $accent-pink;
-    background-color: $accent-yellow;
+    color: $accent-yellow;
+    // background-color: $light-orange;
     line-height: 2;
     text-align: center;
     margin-top: 30px;
@@ -35,14 +37,15 @@
       line-height: 1.9;
       @include text-font;
       &:hover {
-        background-color: $dark-green;
-        color: $white;
+        background-color: $accent-pink;
+        color: white;
+        border: 1px solid white;
       }
     }
   }
   .product-description {
     margin-top: 40px;
-    background-color: $white;
+    // background-color: $white;
     padding: 10px;
   }
   .plant-list {

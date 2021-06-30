@@ -1,18 +1,22 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Slugify from "slugify";
 
 function ContentBox({plant}) {
 
 
-  useEffect(() =>  console.log(plant))
-  const [content, setContent] = useState("medicinale eigenschappen")
+  
+  // const [content, setContent] = useState("");
+  useEffect(() =>  {
+    console.log(plant.products["@id"])
+  }, [])
 
     return (
       <div className="inner-content">
         <div className="text-container">
           <div className="flex">
             <div className="subtitle-container">
-              <h2 className="content-title">{ content }</h2>
+              <h2 className="content-title">Medicinale eigenschappen</h2>
             </div>
               <div className="list-container">
                 <ul className="list list-qualities">
@@ -38,7 +42,14 @@ function ContentBox({plant}) {
               </div>
               <p className="text">Hieronder een lijst van kunstwerkjes en infusies waarin deze plant verwerkt werd:</p>
               <ul className="list">
-                {plant.products.map((product, i) => <li key={i}><Link href="#"><a>{product.name}</a></Link></li>)}
+                {plant.products.map((product, i) => {
+                  if(product.category === "/julie21/eindwerk/api/categories/1"){
+                    return <li key={i}><Link href={ "/shop/infusies/6/" + Slugify(product.name, {lower:true, strict:true}) }><a>{product.name}</a></Link></li>
+                  } else {
+                    return <li key={i}><Link href={ "/shop/bloemenkunst/6/" + Slugify(product.name, {lower:true, strict:true}) }><a>{product.name}</a></Link></li>
+                  }
+                  
+                })}
               </ul>
             </div>
           </div>

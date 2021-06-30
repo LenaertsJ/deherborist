@@ -6,7 +6,12 @@ function Searchform({handleClickEvent, handleSubmit, handleChange, options, type
 
     return (
         <div className="search-container">
-        <p><span className="search-word">Zoek</span> op basis van <span><button className="btn" onClick={ handleClickEvent }>plant</button></span> of <span><button className="btn" onClick={ handleClickEvent }>medicinale eigenschap</button></span>...</p>
+        <p><span className="search-word">Zoek</span> op basis van... <span><button className="btn" onClick={ handleClickEvent }>plant</button></span> of <span><button className="btn" onClick={ handleClickEvent }>medicinale eigenschap</button></span>...</p>
+        {/* <p><span className="search-word">Zoek</span> op basis van...</p>
+        <form>
+            <input type="radio" value="plants" /><label for="plants">plants</label>
+            <input type="radio" value="medicinal" /><label for="medicinal">medicinale eigenschap</label>
+        </form> */}
         <form className="search-form" onSubmit={handleSubmit}>
             <div className="select-div">
                 <select name="plant" onChange={ handleChange } defaultValue={'DEFAULT'} className="select-field">

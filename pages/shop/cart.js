@@ -13,10 +13,7 @@ function Cart() {
     const sum = items.reduce((sum, item) => {
       return sum + item.totalPrice;
     }, 0);
-    setTotalPrice(sum);
-
-    console.log("verandering");
-    console.log(items);
+    setTotalPrice(sum.toFixed(2));
 
     const sumQuantity = items.reduce((sum, item) => {
       return sum + item.quantity;

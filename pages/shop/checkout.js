@@ -11,9 +11,9 @@ const SignupForm = () => {
 
   useEffect(() => {
     setTotalPrice(
-      items.reduce((sum, item) => {
+      (items.reduce((sum, item) => {
         return sum + item.totalPrice;
-      }, 0)
+      }, 0)).toFixed(2)
     );
   }, [items]);
 

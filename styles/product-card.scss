@@ -11,21 +11,16 @@
     }
     .product-img {
       width: 100%;
-      height: 200px;
-      border-radius: 5px;
-      aspect-ratio: 3/2;
-      img {
-        object-fit: cover;
-      }
+      
     }
     .info-container {
       padding: 20px;
-      height: 80px;
+      height: 50px;
       position: relative;
+      background-color: rgba(255, 255, 255, 0.664);
       .product-title {
         @include menu-font;
         color: $subtitle-color;
-        margin-bottom: 20px;
       }
       p {
         @include text-font;
@@ -36,7 +31,7 @@
         position: absolute;
         bottom: 17%;
         left: 0px;
-        width: 60%;
+        width: 70%;
       }
     }
   }

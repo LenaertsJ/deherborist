@@ -35,7 +35,7 @@ function Navbar() {
                  <Link href="/shop/cart"><a>
                     <div className="link">cart</div>
                 </a></Link>
-                <div className="cart-quantity"><p>{ quantity }</p></div>
+                <Link href="/shop/cart"><a><div className="cart-quantity"><p>{ quantity }</p></div></a></Link>
     
             </div>
             <div className="dropdown">

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import persistedState from "use-persisted-state";
+import { useRouter } from 'next/router';
 
 import ResultList from "../components/result-list";
 import Searchform from "../components/searchform";
@@ -7,6 +8,8 @@ import Searchform from "../components/searchform";
 import axios from "../axios";
 
 function Plants() {
+
+  const router = useRouter();
   //STATES
   const useResultState = persistedState("result");
 
@@ -16,9 +19,9 @@ function Plants() {
   const [result, setResult] = useResultState([]);
 
   //STORAGE
-  // useEffect(() => {
-  //   console.log(result);
-  // }, [result]);
+  useEffect(() => {
+    console.log(result);
+  }, [result]);
 
   //FETCH
   useEffect(() => {
@@ -29,9 +32,10 @@ function Plants() {
   }, [type]);
 
   //HANDLERS
-  const handleClickEvent = (e) => {
-    const btnValue = e.target.innerText;
-    if (btnValue === "plant") {
+  const handleOptionChange = (e) => {
+    console.log(e.target.value)
+    const btnValue = e.target.value;
+    if (btnValue === "plants") {
       setType("plants");
     } else {
       setType("qualities");
@@ -49,7 +53,12 @@ function Plants() {
     if (type === "plants") {
       axios
         .get(`plants?name=${value}`)
-        .then((response) => setResult(response.data["hydra:member"]))
+        .then((response) => {
+          // setResult(response.data["hydra:member"]))
+          const id = response.data["hydra:member"][0].id;
+          const name = response.data["hydra:member"][0].name;
+          router.push(`/plants/${id}/${name}`)
+        })
         .catch((error) => console.log(error));
     } else {
       axios
@@ -73,7 +82,7 @@ function Plants() {
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           value={value}
-          handleClickEvent={handleClickEvent}
+          handleOptionChange={handleOptionChange}
           options={options}
           type={type}
         />

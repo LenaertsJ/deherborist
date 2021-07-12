@@ -8,15 +8,22 @@ function ProductDetail({ product }) {
 
     const { state = null, dispatch } = useContext(CartContext)
     const [count, setCount] = useState(1)
+    const [message, setMessage] = useState("")
 
     const decrementCounter = () => setCount(count - 1);
     const incrementCounter = () => setCount(count + 1);
+
+    const addToCart = () => {
+        dispatch(addItem(product, count))
+        setMessage("Product werd toegevoegd aan je mandje!")
+    }
 
     return (
         <div className="product-info">
             <h4 className="product-title">{ product.name }</h4>
             <p className="product-price">prijs: {product.prices[0].brutoPrice} €</p>
-            {product.stock === 1 && <p className="stock-msg">Nog maar één beschikbaar...</p>}
+            {message && <p className="success-msg">{message}</p>}
+            {product.stock === 1 && !message && <p className="stock-msg">Nog maar één beschikbaar...</p>}
             {product.stock === 0 && <p className="stock-msg">Dit product is helaas uitverkocht...</p>}
             <div className="btn-container">    
                 <div className="counter">
@@ -24,7 +31,7 @@ function ProductDetail({ product }) {
                     <p>{ count }</p>
                     <button className="btn quantity-btn" disabled={count === product.stock} onClick={incrementCounter}>+</button>
                 </div>
-                <button className="btn add-btn" onClick={() => dispatch(addItem(product, count))}>In mandje</button>
+                <button className="btn add-btn" onClick={addToCart}>In mandje</button>
             </div>
             <div className="product-description" dangerouslySetInnerHTML={{__html: product.description}}>
             </div>

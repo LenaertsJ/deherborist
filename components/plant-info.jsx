@@ -7,9 +7,9 @@ function ContentBox({plant}) {
 
   
   // const [content, setContent] = useState("");
-  useEffect(() =>  {
-    console.log(plant.products["@id"])
-  }, [])
+  // useEffect(() =>  {
+  //   console.log(plant)
+  // }, [])
 
     return (
       <div className="inner-content">
@@ -43,10 +43,10 @@ function ContentBox({plant}) {
               <p className="text">Hieronder een lijst van kunstwerkjes en infusies waarin deze plant verwerkt werd:</p>
               <ul className="list">
                 {plant.products.map((product, i) => {
-                  if(product.category === "/julie21/eindwerk/api/categories/1"){
-                    return <li key={i}><Link href={ "/shop/infusies/6/" + Slugify(product.name, {lower:true, strict:true}) }><a>{product.name}</a></Link></li>
+                  if(product.category.name === "infusies"){
+                    return <li key={i}><Link href={ "/shop/infusies/" + product.id + Slugify(product.name, {lower:true, strict:true}) }><a>{product.name}</a></Link></li>
                   } else {
-                    return <li key={i}><Link href={ "/shop/bloemenkunst/6/" + Slugify(product.name, {lower:true, strict:true}) }><a>{product.name}</a></Link></li>
+                    return <li key={i}><Link href={ "/shop/bloemenkunst/" + product.id + Slugify(product.name, {lower:true, strict:true}) }><a>{product.name}</a></Link></li>
                   }
                   
                 })}

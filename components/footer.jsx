@@ -4,7 +4,7 @@ function Footer() {
     return (
         <div className="footer-container">
             <div className="footer-text">
-                <p>Neem gerust eens contact op</p>
+                <p>Neem eens contact op...</p>
                 <p className="footer-title">De herborist</p>
             </div>
             <div className="contact-info">

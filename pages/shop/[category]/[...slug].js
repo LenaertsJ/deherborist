@@ -21,7 +21,7 @@ function Product({ product }) {
           <div className="nav-box">
             <a className="link-back" onClick={() => router.back()}>
               <CgArrowLongLeft className="icon" />
-              <p>go back</p>
+              <p className="link-text">back</p>
             </a>
           </div>
           <ProductDetail product={product} />

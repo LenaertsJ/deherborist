@@ -8,9 +8,9 @@ function Footer() {
                 <p className="footer-title">De herborist</p>
             </div>
             <div className="contact-info">
-                <p>Charlotte Smolders</p>
+                <p>Charlotte</p>
                 <p>deherborist@gmail.com</p>
-                <p>0032 475 92 86 35</p>
+                <p>0032 475 ** ** **</p>
             </div>
         </div>
     )

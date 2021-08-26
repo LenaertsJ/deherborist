@@ -107,7 +107,7 @@ a {
   .icon {
     margin-right: 10px;
   }
-  .link-text{
+  .link-text {
     @include text-font;
     font-size: 1.5rem;
   }
@@ -234,7 +234,7 @@ a {
       .stem {
         position: absolute;
         bottom: 77px;
-        right: -61px;
+        right: -60px;
         width: 150px;
         border: 0.5px solid rgb(194, 192, 192);
         transform: rotate(90deg);

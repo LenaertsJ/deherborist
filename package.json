@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next dev",
+    "build": "next build && next export",
     "start": "next start"
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "cross-env": "^7.0.3",
     "formik": "^2.2.9",
     "next": "10.2.0",
     "next-seo": "^4.26.0",
@@ -16,6 +17,7 @@
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
     "react-mt-svg-lines": "^0.9.1",
+    "react-scripts": "^5.0.1",
     "sass": "^1.32.13",
     "slugify": "^1.5.3",
     "use-persisted-reducer": "^2.1.0",
